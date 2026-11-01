@@ -25,7 +25,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": 1,
     "brand": "CELIMAX",
-    "title": "The Real Noni Energy Ampoule",
+    "title": "Ampolla Noni",
     "category": "Sérums",
     "skinTypes": [
       "Piel Seca",
@@ -34,9 +34,9 @@ export const PRODUCTS: Product[] = [
     ],
     "compatibility": "Piel fatigada / Vitalidad",
     "price": 38.19,
-    "image": "./images/products/celimax-ampolla-noni.webp",
+    "image": "./images/products/celimax-ampolla-noni.jpg",
     "gallery": [
-      "./images/products/celimax-ampolla-noni.webp"
+      "./images/products/celimax-ampolla-noni.jpg"
     ],
     "attributes": [
       "Noni 71.77%",
@@ -50,7 +50,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": 2,
     "brand": "CELIMAX",
-    "title": "Oil Control Light Cream (80ml)",
+    "title": "Oil Control Cream (80ml)",
     "category": "Hidratantes",
     "skinTypes": [
       "Piel Grasa/Mixta",
@@ -58,9 +58,9 @@ export const PRODUCTS: Product[] = [
     ],
     "compatibility": "Control de brillo / Piel Grasa",
     "price": 34.3,
-    "image": "./images/products/celimax-oil-control-cream.webp",
+    "image": "./images/products/celimax-oil-control-cream-80ml-.jpg",
     "gallery": [
-      "./images/products/celimax-oil-control-cream.webp"
+      "./images/products/celimax-oil-control-cream-80ml-.jpg"
     ],
     "attributes": [
       "Sin Aceites",
@@ -74,7 +74,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": 3,
     "brand": "CELIMAX",
-    "title": "Control Light Sunscreen SPF 50+ (40ml)",
+    "title": "Control Light Sunscreen (40ml)",
     "category": "Protector Solar",
     "skinTypes": [
       "Piel Grasa/Mixta",
@@ -82,9 +82,9 @@ export const PRODUCTS: Product[] = [
     ],
     "compatibility": "Piel Grasa / Acabado Ligero",
     "price": 29.61,
-    "image": "./images/products/celimax-control-light-sunscreen.webp",
+    "image": "./images/products/celimax-control-light-sunscreen-40ml-.jpg",
     "gallery": [
-      "./images/products/celimax-control-light-sunscreen.webp"
+      "./images/products/celimax-control-light-sunscreen-40ml-.jpg"
     ],
     "attributes": [
       "SPF 50+ PA++++",
@@ -98,7 +98,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": 4,
     "brand": "CELIMAX",
-    "title": "Mattifying Sun Stick SPF 50+",
+    "title": "Mattifying Sun Stick",
     "category": "Protector Solar",
     "skinTypes": [
       "Piel Grasa/Mixta",
@@ -106,9 +106,9 @@ export const PRODUCTS: Product[] = [
     ],
     "compatibility": "Reaplicable / Mate suave",
     "price": 30.13,
-    "image": "./images/products/celimax-mattifying-sun-stick.webp",
+    "image": "./images/products/celimax-mattifying-sun-stick.jpg",
     "gallery": [
-      "./images/products/celimax-mattifying-sun-stick.webp"
+      "./images/products/celimax-mattifying-sun-stick.jpg"
     ],
     "attributes": [
       "Formato Barra",
@@ -122,7 +122,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": 5,
     "brand": "CELIMAX",
-    "title": "Retinol Booster Shot Tightening",
+    "title": "Retinol Booster",
     "category": "Sérums",
     "skinTypes": [
       "Piel Grasa/Mixta",
@@ -130,9 +130,9 @@ export const PRODUCTS: Product[] = [
     ],
     "compatibility": "Poros y Firmeza",
     "price": 34.78,
-    "image": "./images/products/celimax-retinol-booster.webp",
+    "image": "./images/products/celimax-retinol-booster.jpg",
     "gallery": [
-      "./images/products/celimax-retinol-booster.webp"
+      "./images/products/celimax-retinol-booster.jpg"
     ],
     "attributes": [
       "Retinol puro",
@@ -146,7 +146,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": 6,
     "brand": "DR. ALTHEA",
-    "title": "345 Relief Cream",
+    "title": "345 Cream",
     "category": "Hidratantes",
     "skinTypes": [
       "Piel Sensible/Rojeces",
@@ -155,9 +155,9 @@ export const PRODUCTS: Product[] = [
     ],
     "compatibility": "Calmante de Acné y Marcas",
     "price": 44.24,
-    "image": "./images/products/dr-althea-345-cream.webp",
+    "image": "./images/products/dr-althea-345-cream.jpg",
     "gallery": [
-      "./images/products/dr-althea-345-cream.webp"
+      "./images/products/dr-althea-345-cream.jpg"
     ],
     "attributes": [
       "Fórmula 345",
@@ -171,7 +171,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": 7,
     "brand": "DR. ALTHEA",
-    "title": "Vitamin C Boosting Serum",
+    "title": "Vitamin C Serum",
     "category": "Sérums",
     "skinTypes": [
       "Antimanchas",
@@ -179,9 +179,9 @@ export const PRODUCTS: Product[] = [
     ],
     "compatibility": "Luminosidad / Tono uniforme",
     "price": 31.8,
-    "image": "./images/products/dr-althea-vitamin-c-serum.webp",
+    "image": "./images/products/dr-althea-vitamin-c-serum.jpg",
     "gallery": [
-      "./images/products/dr-althea-vitamin-c-serum.webp"
+      "./images/products/dr-althea-vitamin-c-serum.jpg"
     ],
     "attributes": [
       "Vitamina C pura",
@@ -189,37 +189,37 @@ export const PRODUCTS: Product[] = [
       "Antimanchas"
     ],
     "ingredients": "Derivado estable de vitamina C, ácido ferúlico y extracto de espino amarillo.",
-    "benefits": "Ilumina la piel apagada, unifica el tono y difumina manchas solares o post-acné protegiendo de radicales libres.",
-    "use": "Aplica unas gotas por la mañana antes de la crema hidratante y el protector solar."
+    "benefits": "Ilumina la piel apagada, unifica el tono y protege frente a radicales libres que aceleran el envejecimiento prematuro.",
+    "use": "Aplica de 3 a 4 gotas en la mañana antes del protector solar."
   },
   {
     "id": 8,
     "brand": "DR. ALTHEA",
-    "title": "345 Calming Facial Mist",
+    "title": "345 Mist",
     "category": "Tónicos & Esencias",
     "skinTypes": [
       "Piel Sensible/Rojeces",
-      "Piel Grasa/Mixta"
+      "Piel Seca"
     ],
-    "compatibility": "Calmante exprés en bruma",
+    "compatibility": "Bruma Calmante",
     "price": 34.1,
-    "image": "./images/products/dr-althea-345-mist.webp",
+    "image": "./images/products/dr-althea-345-mist.jpg",
     "gallery": [
-      "./images/products/dr-althea-345-mist.webp"
+      "./images/products/dr-althea-345-mist.jpg"
     ],
     "attributes": [
-      "Bruma calmante",
-      "Fórmula 345",
+      "Bruma ultrafina",
+      "Efecto refrescante",
       "Anti-rojeces"
     ],
-    "ingredients": "Centella asiática, resveratrol, agua de árbol de té y pantenol.",
-    "benefits": "Calma rojeces e irritaciones repentinas a lo largo del día, restituyendo la humedad perdida por el calor o aire acondicionado.",
+    "ingredients": "Extracto de centella asiática, pantenol y agua de rosas damascena.",
+    "benefits": "Niebla hidratante microfina que calma la irritación al contacto y restaura la humedad perdida por el calor o aire acondicionado.",
     "use": "Rocía a 20 cm del rostro en cualquier momento del día."
   },
   {
     "id": 9,
     "brand": "DR. ALTHEA",
-    "title": "Aqua Hydration Mist",
+    "title": "Aqua Mist",
     "category": "Tónicos & Esencias",
     "skinTypes": [
       "Piel Seca",
@@ -227,9 +227,9 @@ export const PRODUCTS: Product[] = [
     ],
     "compatibility": "Hidratación instantánea",
     "price": 32.1,
-    "image": "./images/products/dr-althea-aqua-mist.webp",
+    "image": "./images/products/dr-althea-aqua-mist.jpg",
     "gallery": [
-      "./images/products/dr-althea-aqua-mist.webp"
+      "./images/products/dr-althea-aqua-mist.jpg"
     ],
     "attributes": [
       "Ácido Hialurónico",
@@ -243,7 +243,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": 10,
     "brand": "DR. ALTHEA",
-    "title": "345 Relief Intensive Serum",
+    "title": "345 Relief Serum",
     "category": "Sérums",
     "skinTypes": [
       "Piel Sensible/Rojeces",
@@ -251,9 +251,9 @@ export const PRODUCTS: Product[] = [
     ],
     "compatibility": "Reparación intensiva",
     "price": 29.97,
-    "image": "./images/products/dr-althea-345-relief-serum.webp",
+    "image": "./images/products/dr-althea-345-relief-serum.jpg",
     "gallery": [
-      "./images/products/dr-althea-345-relief-serum.webp"
+      "./images/products/dr-althea-345-relief-serum.jpg"
     ],
     "attributes": [
       "Concentrado 345",
@@ -267,7 +267,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": 11,
     "brand": "DR. ALTHEA",
-    "title": "Salicylic Acid Clarifying Pad",
+    "title": "Salicylic Acid Pad",
     "category": "Limpiadores",
     "skinTypes": [
       "Piel Grasa/Mixta",
@@ -275,9 +275,9 @@ export const PRODUCTS: Product[] = [
     ],
     "compatibility": "Exfoliante suave BHA",
     "price": 38.51,
-    "image": "./images/products/dr-althea-salicylic-acid-pad.webp",
+    "image": "./images/products/dr-althea-salicylic-acid-pad.jpg",
     "gallery": [
-      "./images/products/dr-althea-salicylic-acid-pad.webp"
+      "./images/products/dr-althea-salicylic-acid-pad.jpg"
     ],
     "attributes": [
       "BHA 2%",
@@ -291,7 +291,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": 12,
     "brand": "DR. ALTHEA",
-    "title": "Retinol Eye Roller Care",
+    "title": "Retinol Eye Roller",
     "category": "Ojos & Labios",
     "skinTypes": [
       "Piel Seca",
@@ -299,9 +299,9 @@ export const PRODUCTS: Product[] = [
     ],
     "compatibility": "Contorno con aplicador frío",
     "price": 38.87,
-    "image": "./images/products/dr-althea-retinol-eye-roller.webp",
+    "image": "./images/products/dr-althea-retinol-eye-roller.jpg",
     "gallery": [
-      "./images/products/dr-althea-retinol-eye-roller.webp"
+      "./images/products/dr-althea-retinol-eye-roller.jpg"
     ],
     "attributes": [
       "Aplicador metálico frío",
@@ -315,7 +315,7 @@ export const PRODUCTS: Product[] = [
   {
     "id": 13,
     "brand": "HARUHARU WONDER",
-    "title": "Black Rice Pure Mineral Sunscreen SPF 50+",
+    "title": "Black Mineral Sun",
     "category": "Protector Solar",
     "skinTypes": [
       "Piel Sensible/Rojeces",
@@ -323,9 +323,9 @@ export const PRODUCTS: Product[] = [
     ],
     "compatibility": "Filtro 100% Mineral",
     "price": 36.53,
-    "image": "./images/products/haruharu-black-mineral-sun.webp",
+    "image": "./images/products/haruharu-wonder-black-mineral-sun.jpg",
     "gallery": [
-      "./images/products/haruharu-black-mineral-sun.webp"
+      "./images/products/haruharu-wonder-black-mineral-sun.jpg"
     ],
     "attributes": [
       "Mineral / Físico",
@@ -339,31 +339,31 @@ export const PRODUCTS: Product[] = [
   {
     "id": 14,
     "brand": "HARUHARU WONDER",
-    "title": "Black Bamboo Facial Mist",
+    "title": "Black Mist",
     "category": "Tónicos & Esencias",
     "skinTypes": [
       "Piel Seca",
       "Piel Sensible/Rojeces"
     ],
-    "compatibility": "Antioxidante / Calmante Bambú",
+    "compatibility": "Antioxidante / Hidratante",
     "price": 33.39,
-    "image": "./images/products/haruharu-black-bamboo-mist.webp",
+    "image": "./images/products/haruharu-wonder-black-mist.jpg",
     "gallery": [
-      "./images/products/haruharu-black-bamboo-mist.webp"
+      "./images/products/haruharu-wonder-black-mist.jpg"
     ],
     "attributes": [
-      "Bambú Negro Fermentado",
+      "Arroz Negro Fermentado",
       "Sin alcohol",
       "Bruma ultrafina"
     ],
-    "ingredients": "Extracto de corteza y brote de bambú negro fermentado, beta-glucano y ácido hialurónico.",
-    "benefits": "Protege contra el estrés oxidativo ambiental y restaura la frescura e hidratación celular con agua botánica pura de bambú.",
-    "use": "Rocía sobre la piel limpia antes del sérum o durante el día para un boost revitalizante."
+    "ingredients": "Extracto de arroz negro fermentado, ácido hialurónico y extracto de bambú.",
+    "benefits": "Protege contra el daño oxidativo y la polución, restaurando la hidratación con ácido hialurónico de origen vegetal.",
+    "use": "Rocía sobre la piel limpia antes del sérum o a lo largo del día."
   },
   {
     "id": 15,
     "brand": "HARUHARU WONDER",
-    "title": "Black Rice Moisture Airyfit Daily Sunscreen SPF 50+",
+    "title": "Black Rice Moisture Sun",
     "category": "Protector Solar",
     "skinTypes": [
       "Piel Seca",
@@ -371,9 +371,9 @@ export const PRODUCTS: Product[] = [
     ],
     "compatibility": "Acabado invisible sedoso",
     "price": 36.53,
-    "image": "./images/products/haruharu-black-rice-moisture-sun.webp",
+    "image": "./images/products/haruharu-wonder-black-rice-moisture-sun.jpg",
     "gallery": [
-      "./images/products/haruharu-black-rice-moisture-sun.webp"
+      "./images/products/haruharu-wonder-black-rice-moisture-sun.jpg"
     ],
     "attributes": [
       "Químico",
@@ -382,186 +382,184 @@ export const PRODUCTS: Product[] = [
     ],
     "ingredients": "Extracto de arroz negro fermentado, ceramida NP y filtros solares de última generación.",
     "benefits": "Fórmula de rápida absorción sin residuo graso ni blanco, enriquecida con nutrientes de arroz negro para una piel jugosa.",
-    "use": "Aplica como paso final matutino antes de maquillarte o salir."
+    "use": "Aplica como paso final matutino."
   },
   {
     "id": 16,
     "brand": "HEIMISH",
-    "title": "All Clean Lip Mask Care",
+    "title": "Heimish Lip Mask",
     "category": "Ojos & Labios",
     "skinTypes": [
       "Piel Seca"
     ],
-    "compatibility": "Labios secos / Agrietados",
+    "compatibility": "Reparación de labios secos",
     "price": 19.35,
-    "image": "./images/products/heimish-lip-mask.webp",
+    "image": "./images/products/heimish-heimish-lip-mask.jpg",
     "gallery": [
-      "./images/products/heimish-lip-mask.webp"
+      "./images/products/heimish-heimish-lip-mask.jpg"
     ],
     "attributes": [
       "Manteca de Karité",
-      "Uso Nocturno",
-      "Ultra Nutritivo"
+      "Mascarilla nocturna",
+      "Nutrición"
     ],
-    "ingredients": "Manteca de karité, aceite de moringa, cera de abejas y vitamina E.",
-    "benefits": "Mascarilla nutritiva de noche que derrite las células muertas de los labios mientras duermes, dejándolos suaves y voluminosos.",
-    "use": "Aplica una capa generosa antes de dormir o usa una pequeña cantidad durante el día como bálsamo."
+    "ingredients": "Manteca de karité, ceramidas, extracto de bayas y aceites botánicos.",
+    "benefits": "Mascarilla balsámica rica que nutre y repara labios agrietados durante la noche, dejándolos suaves y con volumen al despertar.",
+    "use": "Aplica generosamente en los labios antes de dormir o durante el día como bálsamo."
   },
   {
     "id": 17,
     "brand": "MEDICUBE",
-    "title": "Zero Pore Pad 2.0 (70 Discos)",
+    "title": "Zero Pore Pad",
     "category": "Limpiadores",
     "skinTypes": [
       "Piel Grasa/Mixta",
       "Tendencia al Acné"
     ],
-    "compatibility": "Reducción de poros / Sebo",
+    "compatibility": "Control de poros y textura",
     "price": 38.5,
-    "image": "./images/products/medicube-zero-pore-pad.webp",
+    "image": "./images/products/medicube-zero-pore-pad.jpg",
     "gallery": [
-      "./images/products/medicube-zero-pore-pad.webp"
+      "./images/products/medicube-zero-pore-pad.jpg"
     ],
     "attributes": [
       "AHA + BHA",
-      "70 Discos",
-      "Pore Minimizer"
+      "Anti-sebo patentado",
+      "Doble cara"
     ],
-    "ingredients": "Extracto de flor de prímula, complejo botánico patentado Anti-Sebum P y ácido láctico.",
-    "benefits": "El disco exfoliante número uno en Corea para reducir el tamaño visible de los poros y eliminar sebo acumulado.",
-    "use": "Usa el lado rugoso para exfoliar y el lado liso para calmar e hidratar."
+    "ingredients": "Complejo Anti Sebum P patentado, ácido salicílico y extractos de frutas botánicas.",
+    "benefits": "Discos exfoliantes que reducen visiblemente el diámetro de los poros, remueven células muertas y regulan la producción de grasa.",
+    "use": "Pasa el lado rugoso por el rostro limpio y luego el suave para alisar."
   },
   {
     "id": 18,
     "brand": "MEDICUBE",
-    "title": "Collagen Night Wrapping Mask (75ml)",
+    "title": "Collagen Mask (75ml)",
     "category": "Mascarillas",
     "skinTypes": [
       "Piel Seca",
       "Antimanchas"
     ],
-    "compatibility": "Efecto Peel-off Firmeza",
+    "compatibility": "Efecto tensor / Colágeno",
     "price": 40.26,
-    "image": "./images/products/medicube-collagen-mask.webp",
+    "image": "./images/products/medicube-collagen-mask-75ml.jpg",
     "gallery": [
-      "./images/products/medicube-collagen-mask.webp"
+      "./images/products/medicube-collagen-mask-75ml.jpg"
     ],
     "attributes": [
-      "Colágeno hidrolizado",
-      "Wrapping Mask",
-      "Efecto Glow"
+      "Película protectora",
+      "Triple Colágeno",
+      "Efecto tensor"
     ],
-    "ingredients": "Triple colágeno soluble, elastina y ceramidas bioidénticas.",
-    "benefits": "Crea una película protectora transpirable que sella todos los nutrientes de tu rutina nocturna, revelando una piel firme y luminosa por la mañana.",
-    "use": "Aplica con brocha como último paso de noche, déjala secar 15 min y retírala desprendiéndola a la mañana siguiente."
+    "ingredients": "Triple colágeno soluble, elastina hidrolizada y ácido hialurónico.",
+    "benefits": "Crea una película invisible que sella la hidratación y los activos en la piel durante la noche, devolviendo firmeza y elasticidad.",
+    "use": "Aplica una capa uniforme como paso final nocturno. Retira la película despegándola por la mañana."
   },
   {
     "id": 19,
     "brand": "MEDICUBE",
-    "title": "Deep Vita C Capsule Cream",
+    "title": "Vitamin C Cream",
     "category": "Hidratantes",
     "skinTypes": [
       "Antimanchas",
-      "Piel Grasa/Mixta"
+      "Piel Seca"
     ],
-    "compatibility": "Despigmentante / Luminosidad",
+    "compatibility": "Aclarante de manchas",
     "price": 48.61,
-    "image": "./images/products/medicube-vitamin-c-cream.webp",
+    "image": "./images/products/medicube-vitamin-c-cream.jpg",
     "gallery": [
-      "./images/products/medicube-vitamin-c-cream.webp"
+      "./images/products/medicube-vitamin-c-cream.jpg"
     ],
     "attributes": [
-      "Vitamina C pura",
-      "Cápsulas frescas",
-      "Antimanchas"
+      "Vitamina C concentrada",
+      "Efecto glow",
+      "Antioxidante"
     ],
-    "ingredients": "Agua de espino amarillo al 50%, ácido ascórbico puro en cápsulas y niacinamida 5%.",
-    "benefits": "Crema en gel con cápsulas de vitamina C fresca que se rompen al contacto para disolver melasma, pecas y marcas oscuras.",
-    "use": "Mezcla la cápsula y el gel en la palma de tu mano y distribuye de manera homogénea."
+    "ingredients": "Vitamina C pura al 6.5%, alfa-arbutina y niacinamida.",
+    "benefits": "Crema intensiva antimanchas que combate la hiperpigmentación, pecas del sol y tono desigual aportando luminosidad duradera.",
+    "use": "Aplica sobre manchas localizadas o en todo el rostro en la rutina de mañana o noche."
   },
   {
     "id": 20,
     "brand": "MEDICUBE",
-    "title": "PDRN Pink Peptide Serum",
+    "title": "PDRN Pink Serum",
     "category": "Sérums",
     "skinTypes": [
       "Antimanchas",
-      "Piel Seca",
-      "Piel Sensible/Rojeces"
+      "Piel Seca"
     ],
-    "compatibility": "Regeneración celular / Glow",
+    "compatibility": "Regenerador celular / PDRN",
     "price": 34.9,
-    "image": "./images/products/medicube-pdrn-pink-serum.webp",
+    "image": "./images/products/medicube-pdrn-pink-serum.jpg",
     "gallery": [
-      "./images/products/medicube-pdrn-pink-serum.webp"
+      "./images/products/medicube-pdrn-pink-serum.jpg"
     ],
     "attributes": [
       "PDRN Salmón",
-      "Péptidos Tensores",
-      "Rosa Natural"
+      "Péptidos rosados",
+      "Elasticidad"
     ],
-    "ingredients": "PDRN (ADN de salmón) al 1%, niacinamida, pantenol y extracto de cianocobalamina (vitamina B12).",
-    "benefits": "Fórmula de dermatología estética que repara microlesiones de la barrera cutánea, redensifica la piel y brinda un resplandor rosa saludable.",
-    "use": "Aplica 2 a 3 gotas dando toques suaves sobre el rostro limpio."
+    "ingredients": "PDRN de salmón purificado, complejo de 5 péptidos y niacinamida.",
+    "benefits": "Fórmula de dermatología avanzada que estimula la regeneración del colágeno, tensa la piel y suaviza cicatrices y líneas marcadas.",
+    "use": "Distribuye de 2 a 3 gotas en rostro y cuello con toquecitos."
   },
   {
     "id": 21,
     "brand": "MEDICUBE",
-    "title": "PDRN Pink Collagen Volume Multi Balm",
+    "title": "Collagen Lip Cream",
     "category": "Ojos & Labios",
     "skinTypes": [
-      "Piel Seca",
-      "Piel Sensible/Rojeces"
+      "Piel Seca"
     ],
-    "compatibility": "Nutrición localizada / Antiedad",
-    "price": 45,
-    "image": "./images/products/medicube-pdrn-pink-multi-balm.webp",
+    "compatibility": "Volumen y nutrición labial",
+    "price": 47.22,
+    "image": "./images/products/medicube-collagen-lip-cream.jpg",
     "gallery": [
-      "./images/products/medicube-pdrn-pink-multi-balm.webp"
+      "./images/products/medicube-collagen-lip-cream.jpg"
     ],
     "attributes": [
-      "PDRN + Colágeno",
-      "Formato Stick",
-      "Voluminizador"
+      "Colágeno marino",
+      "Efecto relleno",
+      "Hidratación 24h"
     ],
-    "ingredients": "PDRN concentrado, colágeno hidrolizado de bajo peso molecular, manteca de karité y péptidos.",
-    "benefits": "Bálsamo multiuso en barra que aporta hidratación instantánea, atenúa líneas de expresión en cuello, frente, contorno de ojos y labios agrietados.",
-    "use": "Desliza en cualquier momento del día en las zonas con resequedad o líneas finas."
+    "ingredients": "Colágeno hidrolizado, péptidos voluminizadores y manteca de cacao.",
+    "benefits": "Crema labial enriquecida con colágeno que rellena líneas finas en los labios devolviendo suavidad y tersura.",
+    "use": "Aplica con la yema del dedo sobre los labios cuando sea necesario."
   },
   {
     "id": 22,
     "brand": "MEDICUBE",
-    "title": "TXA Niacinamide Capsule Cream",
+    "title": "TXA Niacinamide Cream",
     "category": "Hidratantes",
     "skinTypes": [
       "Antimanchas",
-      "Piel Grasa/Mixta"
+      "Piel Sensible/Rojeces"
     ],
-    "compatibility": "Hiperpigmentación rebelde",
+    "compatibility": "Melasma y manchas resistentes",
     "price": 45.55,
-    "image": "./images/products/medicube-txa-niacinamide-cream.webp",
+    "image": "./images/products/medicube-txa-niacinamide-cream.jpg",
     "gallery": [
-      "./images/products/medicube-txa-niacinamide-cream.webp"
+      "./images/products/medicube-txa-niacinamide-cream.jpg"
     ],
     "attributes": [
       "Ácido Tranexámico",
-      "Niacinamida",
-      "Cápsulas duales"
+      "Niacinamida 5%",
+      "Unifica tono"
     ],
-    "ingredients": "Ácido tranexámico grado farmacéutico, niacinamida al 5% y arbutina.",
-    "benefits": "Frena la síntesis descontrolada de melanina tratando manchas profundas causadas por acné y radiación solar.",
-    "use": "Aplica sobre manchas focalizadas o en todo el rostro en la rutina de noche."
+    "ingredients": "Ácido tranexámico, niacinamida al 5% y glutatión.",
+    "benefits": "Eficaz tratamiento para manchas persistentes, melasma y marcas oscuras post-acné, bloqueando la transferencia de pigmento.",
+    "use": "Aplica como crema hidratante día y noche."
   },
   {
     "id": 23,
     "brand": "MEDICUBE",
-    "title": "Acid Hipocloroso Calming Cream",
+    "title": "Acid Hipocloroso Cream",
     "category": "Hidratantes",
     "skinTypes": [
       "Tendencia al Acné",
       "Piel Sensible/Rojeces"
     ],
-    "compatibility": "Calmante bactericida / Acné",
+    "compatibility": "Acné activo y dermatitis",
     "price": 37.07,
     "image": "./images/products/medicube-acid-hipocloroso-cream.webp",
     "gallery": [
@@ -570,58 +568,59 @@ export const PRODUCTS: Product[] = [
     "attributes": [
       "Ácido Hipocloroso",
       "Antibacteriano",
-      "Anti-irritaciones"
+      "Calmante"
     ],
-    "ingredients": "Ácido hipocloroso puro estabilizado, centella y alantoína.",
-    "benefits": "Neutraliza las bacterias causantes del acné y calma brotes activos reduciendo la inflamación sin resecar.",
-    "use": "Aplica como hidratante diario sobre piel propensa a brotes o irritaciones."
+    "ingredients": "Ácido hipocloroso estabilizado, centella asiática y zinc PCA.",
+    "benefits": "Elimina las bacterias causantes del acné, alivia la irritación severa y acelera la cicatrización sin desequilibrar la flora cutánea.",
+    "use": "Extiende suavemente sobre áreas con brotes o inflamación activa."
   },
   {
     "id": 24,
     "brand": "MEDICUBE",
-    "title": "No Cast Just Glow Sunscreen SPF 50+",
+    "title": "No Cast Just Glow Sun",
     "category": "Protector Solar",
     "skinTypes": [
       "Piel Seca",
-      "Piel Grasa/Mixta"
+      "Antimanchas"
     ],
-    "compatibility": "Acabado radiante natural",
+    "compatibility": "Luminosidad / Acabado Glow",
     "price": 35.79,
-    "image": "./images/products/medicube-no-cast-glow-sun.webp",
+    "image": "./images/products/medicube-no-cast-just-glow-sun.jpg",
     "gallery": [
-      "./images/products/medicube-no-cast-glow-sun.webp"
+      "./images/products/medicube-no-cast-just-glow-sun.jpg"
     ],
     "attributes": [
-      "Collagen Glow",
-      "SPF 50+ PA++++",
-      "Zero Blanco"
+      "Acabado Jugoso",
+      "Protección Total",
+      "Sin rastro blanco"
     ],
-    "ingredients": "Colágeno hidrolizado, ácido hialurónico y filtros solares orgánicos.",
-    "benefits": "Protector solar hidratante con infusión de colágeno que proporciona un acabado luminoso tipo cristal sin residuos grasos.",
-    "use": "Aplica generosamente en rostro y cuello 15 minutos antes de la exposición solar."
+    "ingredients": "Filtros químicos avanzados, niacinamida y complejo vitamínico.",
+    "benefits": "Protector solar hidratante que confiere un acabado 'glass skin' radiante y natural sin dejar sensación grasosa.",
+    "use": "Aplica como último paso de tu rutina de día."
   },
   {
     "id": 25,
     "brand": "MEDICUBE",
-    "title": "AGE-R Booster Pro X2 (Dispositivo)",
+    "title": "AGE-R Booster Pro X2",
     "category": "Dispositivos & Sets",
     "skinTypes": [
-      "Todos"
+      "Piel Seca",
+      "Antimanchas"
     ],
-    "compatibility": "Dermatología en Casa 6 en 1",
+    "compatibility": "Dispositivo Profesional 6 en 1",
     "price": 608.4,
-    "image": "./images/products/medicube-age-r-booster-pro-x2.webp",
+    "image": "./images/products/medicube-age-r-booster-pro-x2.jpg",
     "gallery": [
-      "./images/products/medicube-age-r-booster-pro-x2.webp"
+      "./images/products/medicube-age-r-booster-pro-x2.jpg"
     ],
     "attributes": [
       "Electroporación",
-      "Microcorriente",
-      "EMS & LED"
+      "Microcorrientes",
+      "Terapia LED"
     ],
-    "ingredients": "Dispositivo médico-estético de titanio y cabezal ergonómico con conexión Bluetooth inteligente.",
-    "benefits": "Multiplica por 8 la absorción de los principios activos en la piel mediante electroporación, reafirma con microcorriente y activa el colágeno.",
-    "use": "Usa de 1 a 3 minutos diarios combinándolo con tus sérums y cremas favoritas."
+    "ingredients": "Tecnología de electro-estimulación de microcorrientes y fototerapia LED de 5 colores.",
+    "benefits": "Dispositivo de belleza profesional que multiplica por 500 la absorción de principios activos en capas profundas de la piel.",
+    "use": "Usa 5 minutos diarios junto a tus sueros y cremas habituales."
   },
   {
     "id": 26,
@@ -629,311 +628,318 @@ export const PRODUCTS: Product[] = [
     "title": "AGE-R Booster Pro Mini",
     "category": "Dispositivos & Sets",
     "skinTypes": [
-      "Todos"
+      "Piel Seca",
+      "Antimanchas"
     ],
-    "compatibility": "Absorción ultra rápida portátil",
+    "compatibility": "Dispositivo Portátil de Belleza",
     "price": 267.15,
-    "image": "./images/products/medicube-age-r-booster-pro-mini.webp",
+    "image": "./images/products/medicube-age-r-booster-pro-mini.jpg",
     "gallery": [
-      "./images/products/medicube-age-r-booster-pro-mini.webp"
+      "./images/products/medicube-age-r-booster-pro-mini.jpg"
     ],
     "attributes": [
-      "Compacto",
-      "Glow Instantáneo",
-      "Uso diario"
+      "Portátil",
+      "Booster de absorción",
+      "Recargable USB"
     ],
-    "ingredients": "Dispositivo portátil de electroporación con electrodos de precisión.",
-    "benefits": "Versión compacta del Booster Pro que lleva tus sérums a las capas profundas de la epidermis en segundos para un brillo instantáneo.",
-    "use": "Desliza en movimientos circulares ascendentes sobre la piel con sérum."
+    "ingredients": "Placa conductora hipoalergénica con pulsos de absorción dérmica.",
+    "benefits": "Versión compacta y de viaje del afamado Booster Pro para mantener tu tratamiento de electroporación donde vayas.",
+    "use": "Desliza en movimientos ascendentes durante 3 a 5 minutos al aplicar el sérum."
   },
   {
     "id": 27,
     "brand": "MEDICUBE",
-    "title": "Body Wash Kojic Acid Clarifying",
+    "title": "Body Wash Acid Kojic",
     "category": "Limpiadores",
     "skinTypes": [
       "Antimanchas",
-      "Tendencia al Acné"
+      "Piel Grasa/Mixta"
     ],
-    "compatibility": "Cuerpo y Espalda (Bacné)",
+    "compatibility": "Acné y manchas corporales",
     "price": 35.1,
-    "image": "./images/products/medicube-body-wash-kojic.webp",
+    "image": "./images/products/medicube-body-wash-acid-kojic.jpg",
     "gallery": [
-      "./images/products/medicube-body-wash-kojic.webp"
+      "./images/products/medicube-body-wash-acid-kojic.jpg"
     ],
     "attributes": [
       "Ácido Kójico",
-      "Cúrcuma",
-      "Niacinamida 2%"
+      "AHA + BHA",
+      "Espuma purificante"
     ],
-    "ingredients": "Ácido kójico puro, cúrcuma, niacinamida al 2% y vitamina C.",
-    "benefits": "Gel de ducha dermatológico que aclara manchas corporales, unifica codos/axilas y elimina brotes de acné en espalda y pecho.",
-    "use": "Aplica en la ducha con una esponja suave, masajea 1 minuto y enjuaga con agua tibia."
+    "ingredients": "Ácido kójico, ácido salicílico y extracto de árbol de té.",
+    "benefits": "Gel limpiador corporal que combate granitos en espalda y pecho y desvanece manchas oscuras en zonas de roce.",
+    "use": "Usa en la ducha masajeando las áreas deseadas y enjuaga con abundante agua."
   },
   {
     "id": 28,
     "brand": "MIXSOON",
-    "title": "Bean Daily Suncream SPF 50+",
+    "title": "Bean Suncream",
     "category": "Protector Solar",
     "skinTypes": [
       "Piel Seca",
       "Piel Grasa/Mixta"
     ],
-    "compatibility": "Nutrición con Extracto de Soya",
+    "compatibility": "Extracto de Soja / Ligero",
     "price": 24.97,
-    "image": "./images/products/mixsoon-bean-suncream.webp",
+    "image": "./images/products/mixsoon-bean-suncream.jpg",
     "gallery": [
-      "./images/products/mixsoon-bean-suncream.webp"
+      "./images/products/mixsoon-bean-suncream.jpg"
     ],
     "attributes": [
       "Extracto de Soja",
-      "SPF 50+ PA++++",
-      "Sin fragancia"
+      "Efecto hidratante",
+      "Vegano"
     ],
-    "ingredients": "Extracto fermentado de soja coreana, lactobacillus y filtros UVA/UVB fotoestables.",
-    "benefits": "Protector solar hidratante que fortalece la barrera gracias a las proteínas fermentadas de la soja, dejando la piel tersa y sedosa.",
-    "use": "Extiende generosamente tras tu crema hidratante habitual."
+    "ingredients": "Extracto de soja fermentada, alantoína y filtros solares orgánicos.",
+    "benefits": "Protector solar ligero enriquecido con el extracto de soja fermentada característico de Mixsoon, protegiendo e hidratando sin apelmazar.",
+    "use": "Aplica tras la crema hidratante por las mañanas."
   },
   {
     "id": 29,
     "brand": "MIXSOON",
-    "title": "Double Step Cleansing Duo Set",
-    "category": "Dispositivos & Sets",
+    "title": "Doble Limpieza Kit",
+    "category": "Limpiadores",
     "skinTypes": [
-      "Todos"
+      "Piel Grasa/Mixta",
+      "Piel Seca",
+      "Piel Sensible/Rojeces"
     ],
-    "compatibility": "Doble Limpieza Coreana Completa",
-    "price": 48,
+    "compatibility": "Rutina Coreana Completa",
+    "price": 48.0,
     "image": "./images/products/mixsoon-doble-limpieza-kit.webp",
     "gallery": [
       "./images/products/mixsoon-doble-limpieza-kit.webp"
     ],
     "attributes": [
-      "Aceite Soya 195ml",
-      "Espuma Centella 150ml",
-      "Doble Limpieza"
+      "Doble Limpieza",
+      "Extracto puro",
+      "Todo tipo de piel"
     ],
-    "ingredients": "Aceite limpiador de soja fermentada y espuma limpiadora suave de centella asiática.",
-    "benefits": "Paso 1 disuelve maquillaje, protector solar y grasa de poros; Paso 2 purifica suavemente con espuma calmante sin alterar el pH.",
-    "use": "Masajea el aceite en rostro seco, emulsiona con agua y enjuaga. Prosigue con la espuma."
+    "ingredients": "Aceite botánico de soja y espuma suave con aminoácidos.",
+    "benefits": "El combo perfecto para el pilar sagrado del K-Beauty: aceite desmaquillante disuelve impurezas oleosas y la espuma retira restos acuosos.",
+    "use": "Paso 1: Masajea el aceite en seco y enjuaga. Paso 2: Limpia con la espuma húmeda."
   },
   {
     "id": 30,
     "brand": "MIXSOON",
-    "title": "Pure Glow Essentials Glass Skin Set",
+    "title": "Pure Glow Set",
     "category": "Dispositivos & Sets",
     "skinTypes": [
-      "Todos"
+      "Piel Seca",
+      "Antimanchas"
     ],
-    "compatibility": "Rutina Glass Skin Fermentada",
+    "compatibility": "Set Piel de Porcelana",
     "price": 38.9,
     "image": "./images/products/mixsoon-pure-glow-set.webp",
     "gallery": [
       "./images/products/mixsoon-pure-glow-set.webp"
     ],
     "attributes": [
-      "Rutina Esencial",
-      "Soja Fermentada",
-      "Glass Skin"
+      "Esencia de Soya",
+      "Glow natural",
+      "Set de regalo"
     ],
-    "ingredients": "Bean Essence, Bean Cream y limpiador en formato especial de viaje.",
-    "benefits": "El set icónico para lograr el efecto piel de porcelana (Glass Skin) exfoliando gentilmente e hidratando con mucílago vegetal de soja.",
-    "use": "Usa a diario en el orden de limpiador, esencia y crema."
+    "ingredients": "Extracto de soja fermentada pura, centella asiática y galactomyces.",
+    "benefits": "Set icónico para lograr el look piel de cristal coreano con esencias fermentadas nutritivas que aportan hidratación y tersura inmediata.",
+    "use": "Aplica en capas ligeras sobre el rostro tras el tónico."
   },
   {
     "id": 31,
     "brand": "NUMBUZIN",
-    "title": "No.1 PDRN Hydra Glow Toner",
+    "title": "No.1 PDRN Toner",
     "category": "Tónicos & Esencias",
-    "skinTypes": [
-      "Piel Seca",
-      "Piel Sensible/Rojeces"
-    ],
-    "compatibility": "Tónico regenerador PDRN",
-    "price": 31.56,
-    "image": "./images/products/numbuzin-no1-pdrn-toner.webp",
-    "gallery": [
-      "./images/products/numbuzin-no1-pdrn-toner.webp"
-    ],
-    "attributes": [
-      "PDRN Botánico",
-      "Ácido Hialurónico",
-      "Textura Esencia"
-    ],
-    "ingredients": "PDRN vegetal de bajo peso molecular, agua termal y pantenol.",
-    "benefits": "Tónico con textura de esencia espesa que rellena la piel deshidratada, mejorando la retención de agua y la elasticidad inmediata.",
-    "use": "Aplica en las palmas y presiona suavemente sobre el rostro limpio hasta su absorción."
-  },
-  {
-    "id": 32,
-    "brand": "NUMBUZIN",
-    "title": "No.1 Retinal Youth Boosting Serum",
-    "category": "Sérums",
     "skinTypes": [
       "Piel Seca",
       "Antimanchas"
     ],
-    "compatibility": "Antiedad / Retinal Estable",
-    "price": 27.5,
-    "image": "./images/products/numbuzin-no1-retinal-serum.webp",
+    "compatibility": "Hidratación profunda / PDRN",
+    "price": 31.56,
+    "image": "./images/products/numbuzin-no.1-pdrn-toner.jpg",
     "gallery": [
-      "./images/products/numbuzin-no1-retinal-serum.webp"
+      "./images/products/numbuzin-no.1-pdrn-toner.jpg"
     ],
     "attributes": [
-      "Retinal 0.05%",
-      "Liposomado",
-      "Baja irritación"
+      "PDRN Vegetal",
+      "Ácido Hialurónico",
+      "Textura esencia"
     ],
-    "ingredients": "Retinal encapsulado en liposomas, niacinamida y ceramidas.",
-    "benefits": "El retinal actúa 11 veces más rápido que el retinol tradicional para suavizar arrugas y manchas con mínimo riesgo de irritación.",
-    "use": "Aplica de noche tras el tónico, comenzando 2 a 3 veces por semana."
+    "ingredients": "PDRN de origen botánico, agua de glaciar y pantenol.",
+    "benefits": "Tónico lechoso que infunde hidratación voluminizadora y restaura la flexibilidad de pieles apagadas o con sensación tirante.",
+    "use": "Aplica con las manos directamente sobre el rostro y da suaves palmaditas."
+  },
+  {
+    "id": 32,
+    "brand": "NUMBUZIN",
+    "title": "No.1 Retinal Serum",
+    "category": "Sérums",
+    "skinTypes": [
+      "Antimanchas",
+      "Piel Seca"
+    ],
+    "compatibility": "Renovación antiedad",
+    "price": 27.5,
+    "image": "./images/products/numbuzin-no.1-retinal-serum.webp",
+    "gallery": [
+      "./images/products/numbuzin-no.1-retinal-serum.webp"
+    ],
+    "attributes": [
+      "Retinal liposomado",
+      "Rápida acción",
+      "Tolerancia alta"
+    ],
+    "ingredients": "Retinal estabilizado en liposomas, niacinamida y centella asiática.",
+    "benefits": "Sérum nocturno con retinal 11 veces más rápido que el retinol convencional, que estimula el colágeno y afina la superficie cutánea.",
+    "use": "Usa de noche. Aplica 2 a 3 gotas sobre la piel limpia y seca."
   },
   {
     "id": 33,
     "brand": "NUMBUZIN",
-    "title": "No.9 NAD+ Collagen Under Eye Patches (Caja)",
-    "category": "Ojos & Labios",
+    "title": "Patches Collagen Sun (Caja)",
+    "category": "Mascarillas",
     "skinTypes": [
-      "Todos"
+      "Piel Seca",
+      "Antimanchas"
     ],
-    "compatibility": "Parches antiojeras y firmeza",
+    "compatibility": "Protección UV exterior",
     "price": 23.53,
-    "image": "./images/products/numbuzin-patches-nad-collagen-caja.webp",
+    "image": "./images/products/numbuzin-patches-collagen-sun-caja-.webp",
     "gallery": [
-      "./images/products/numbuzin-patches-nad-collagen-caja.webp"
+      "./images/products/numbuzin-patches-collagen-sun-caja-.webp"
     ],
     "attributes": [
-      "NAD+ Coenzima",
-      "Colágeno Marino",
-      "Caja con pares"
+      "Bloqueo UV 99%",
+      "Colágeno hidrolizado",
+      "Adherencia fija"
     ],
-    "ingredients": "Coenzima celular NAD+, colágeno hidrolizado puro, cafeína y niacinamida.",
-    "benefits": "Parches de hidrogel refrescante que reactivan la energía celular del contorno de ojos, desinflamando bolsas y alisando arrugas.",
-    "use": "Coloca bajo los ojos limpios durante 20 a 30 minutos y retira con toques suaves."
+    "ingredients": "Tela elástica transpirable con hidrogel de colágeno y glutatión.",
+    "benefits": "Parches protectores para pómulos y mejillas que bloquean la radiación UV mientras aportan colágeno y frescura durante actividades al aire libre.",
+    "use": "Pega en las mejillas debajo de los ojos antes de exponerte al sol."
   },
   {
     "id": 34,
     "brand": "NUMBUZIN",
-    "title": "No.9 NAD+ Collagen Under Eye Patches (Individual)",
-    "category": "Ojos & Labios",
+    "title": "Patches Collagen Sun (Individual)",
+    "category": "Mascarillas",
     "skinTypes": [
-      "Todos"
+      "Piel Seca",
+      "Antimanchas"
     ],
-    "compatibility": "Tratamiento intensivo individual",
-    "price": 5,
-    "image": "./images/products/numbuzin-patches-nad-collagen-individual.webp",
+    "compatibility": "Protección puntual",
+    "price": 5.0,
+    "image": "./images/products/numbuzin-patches-collagen-sun-individual.jpg",
     "gallery": [
-      "./images/products/numbuzin-patches-nad-collagen-individual.webp"
+      "./images/products/numbuzin-patches-collagen-sun-individual.jpg"
     ],
     "attributes": [
-      "1 Sobre individual",
-      "Efecto flash",
-      "Fácil de llevar"
+      "1 Par de parches",
+      "Deportes y paseos",
+      "Efecto frío"
     ],
-    "ingredients": "Fórmula de colágeno marino concentrado y NAD+ rejuvenecedor.",
-    "benefits": "Ideal para eventos especiales, vuelos o días de poco descanso. Efecto lifting y descongestión inmediata en la mirada.",
-    "use": "Abre el sobre y aplica directamente sobre el contorno de ojos limpio."
+    "ingredients": "Colágeno hidrolizado y filtros de tela anti-UV.",
+    "benefits": "Par de parches solares individuales ideales para golf, pádel, playa o paseos al aire libre.",
+    "use": "Usa durante salidas al sol prolongadas."
   },
   {
     "id": 35,
     "brand": "PURITO",
-    "title": "Oat-In Calming Gel Cream",
+    "title": "Oat In Calming Gel",
     "category": "Hidratantes",
     "skinTypes": [
-      "Piel Sensible/Rojeces",
-      "Piel Grasa/Mixta"
+      "Piel Grasa/Mixta",
+      "Piel Sensible/Rojeces"
     ],
-    "compatibility": "Calmante refrescante de avena",
+    "compatibility": "Calmante ultra ligero",
     "price": 29.53,
-    "image": "./images/products/purito-oat-in-calming-gel.webp",
+    "image": "./images/products/purito-oat-in-calming-gel.jpg",
     "gallery": [
-      "./images/products/purito-oat-in-calming-gel.webp"
+      "./images/products/purito-oat-in-calming-gel.jpg"
     ],
     "attributes": [
-      "Agua de Avena 77%",
-      "Gel Fresco",
+      "Semilla de Avena 77%",
+      "Textura Gel",
       "Sin aceites"
     ],
-    "ingredients": "Agua de semilla de avena (77%), pantenol y escualano vegetal.",
-    "benefits": "Gel ultraligero que alivia quemaduras solares, rojeces y reactividad cutánea sin dejar rastro grasoso ni ocluir los poros.",
-    "use": "Aplica generosamente sobre rostro y cuello mañana y noche."
+    "ingredients": "Agua de semilla de avena al 77%, pantenol y escualano.",
+    "benefits": "Gel hidratante transparente que refresca al instante, desinflama rojeces y equilibra el sebo sin dejar residuo graso.",
+    "use": "Aplica sobre rostro y cuello tras el suero día y noche."
   },
   {
     "id": 36,
     "brand": "PURITO",
-    "title": "Wonder Re-Leaf Centella Serum (60ml)",
+    "title": "Wonder Centella Serum (60ml)",
     "category": "Sérums",
     "skinTypes": [
       "Piel Sensible/Rojeces",
-      "Tendencia al Acné"
+      "Tendencia al Acné",
+      "Piel Grasa/Mixta"
     ],
     "compatibility": "Centella calmante sin perfume",
     "price": 40.18,
-    "image": "./images/products/purito-wonder-centella-serum.webp",
+    "image": "./images/products/purito-wonder-centella-serum-60ml-.jpg",
     "gallery": [
-      "./images/products/purito-wonder-centella-serum.webp"
+      "./images/products/purito-wonder-centella-serum-60ml-.jpg"
     ],
     "attributes": [
-      "Centella 49%",
-      "Niacinamida",
-      "Sin fragancia"
+      "Centella coreana",
+      "Hipoalergénico",
+      "Sin perfume"
     ],
-    "ingredients": "Extracto de centella asiática al 49%, madecassoside, péptidos y ceramidas.",
-    "benefits": "Suero restaurador de barrera diseñado específicamente para pieles ultra sensibles propensas a la irritación y dermatitis.",
-    "use": "Aplica de 1 a 2 pulsaciones tras la limpieza y tónico."
+    "ingredients": "Extracto de centella asiática, péptidos y ácido hialurónico.",
+    "benefits": "Sérum intensivo de centella que alivia la piel reactiva, reduce la sensación de picor o calor y regenera la barrera dañada.",
+    "use": "Presiona 1 a 2 pumps sobre rostro y cuello dando toques suaves."
   },
   {
     "id": 37,
     "brand": "PURITO",
-    "title": "Retinal TXA Niacinamide 10 Facial Serum",
+    "title": "Retinal TXA Niacinamide",
     "category": "Sérums",
     "skinTypes": [
       "Antimanchas",
       "Piel Grasa/Mixta"
     ],
-    "compatibility": "Triple acción manchas y arrugas",
+    "compatibility": "Triple acción antimanchas",
     "price": 38.51,
-    "image": "./images/products/purito-retinal-txa-serum.webp",
+    "image": "./images/products/purito-retinal-txa-niacinamide.webp",
     "gallery": [
-      "./images/products/purito-retinal-txa-serum.webp"
+      "./images/products/purito-retinal-txa-niacinamide.webp"
     ],
     "attributes": [
-      "Retinal puro",
-      "Ácido Tranexámico",
-      "Niacinamida 10%"
+      "Retinal + TXA",
+      "Niacinamida",
+      "Fórmula equilibrada"
     ],
-    "ingredients": "Retinal encapsulado, ácido tranexámico, niacinamida al 10% y alantoína.",
-    "benefits": "Combina los 3 ingredientes más potentes de la dermatología para regenerar la piel, desvanecer manchas y suavizar líneas finas.",
-    "use": "Usa de noche. Aplica 2 o 3 gotas tras el tónico y finaliza con crema hidratante."
+    "ingredients": "Retinal encapsulado, ácido tranexámico al 2% y niacinamida.",
+    "benefits": "Tratamiento multifunción que acelera el recambio celular, desvanece manchas de sol y rojeces post-acné al mismo tiempo.",
+    "use": "Usa por la noche de 2 a 3 veces por semana antes de la crema."
   },
   {
     "id": 38,
     "brand": "PURITO",
-    "title": "Daily Soft Touch Sun Stick Barrier SPF 50+",
+    "title": "Sun Stick Barrier",
     "category": "Protector Solar",
     "skinTypes": [
-      "Piel Sensible/Rojeces",
-      "Piel Grasa/Mixta"
+      "Piel Grasa/Mixta",
+      "Piel Seca"
     ],
-    "compatibility": "Barrera protectora en barra",
+    "compatibility": "Protector solar en barra hidratante",
     "price": 33.39,
-    "image": "./images/products/purito-sun-stick-barrier.webp",
+    "image": "./images/products/purito-sun-stick-barrier.jpg",
     "gallery": [
-      "./images/products/purito-sun-stick-barrier.webp"
+      "./images/products/purito-sun-stick-barrier.jpg"
     ],
     "attributes": [
-      "SPF 50+ PA++++",
-      "Ceramidas",
-      "Tacto Sedoso"
+      "Agua de mar profundo",
+      "Práctico bolsillo",
+      "Invisible"
     ],
-    "ingredients": "Cinco tipos de ceramidas esenciales, centella y filtros fotoestables de amplio espectro.",
-    "benefits": "Protección solar física y química que refuerza la barrera cutánea a la vez que sella la hidratación con acabado mate satinado.",
-    "use": "Reaplica cada 2 horas deslizándolo uniformemente por el rostro."
+    "ingredients": "Agua de mar profundo, ácido hialurónico y extracto de algas.",
+    "benefits": "Barra solar refrescante que protege de los rayos UV sin sensación pegajosa, aportando minerales oceánicos hidratantes.",
+    "use": "Pasa directamente por el rostro para proteger o retocar."
   },
   {
     "id": 39,
     "brand": "PURITO",
-    "title": "Mighty Bamboo Panthenol Cream (100ml)",
+    "title": "Bamboo Cream (100ml)",
     "category": "Hidratantes",
     "skinTypes": [
       "Piel Seca",
@@ -941,120 +947,121 @@ export const PRODUCTS: Product[] = [
     ],
     "compatibility": "Reparación intensiva de barrera",
     "price": 40.18,
-    "image": "./images/products/purito-bamboo-panthenol-cream.webp",
+    "image": "./images/products/purito-bamboo-cream-100ml-.jpg",
     "gallery": [
-      "./images/products/purito-bamboo-panthenol-cream.webp"
+      "./images/products/purito-bamboo-cream-100ml-.jpg"
     ],
     "attributes": [
-      "Bambú coreano",
-      "Pantenol 10%",
-      "Barrera dañada"
+      "Carbón de Bambú",
+      "Ceramidas",
+      "Nutritiva"
     ],
-    "ingredients": "Extracto de bambú de Damyang, pantenol al 10%, escualano y ectoína.",
-    "benefits": "Crema de barrera rica pero de absorción rápida que repara pieles agrietadas o dañadas por retinoides y ácidos fuertes.",
-    "use": "Aplica mañana y noche como último paso de nutrición de tu rutina."
+    "ingredients": "Extracto de bambú fermentado, ceramida NP y alantoína.",
+    "benefits": "Crema densa reparadora que crea un escudo nutritivo contra el frío y la polución, evitando la pérdida transepidérmica de agua.",
+    "use": "Aplica como paso final en la noche o en pieles muy secas en la mañana."
   },
   {
     "id": 40,
     "brand": "PURITO",
-    "title": "No.1 Centella Recovery Serum",
+    "title": "No.1 Serum",
     "category": "Sérums",
     "skinTypes": [
       "Piel Sensible/Rojeces",
-      "Tendencia al Acné"
+      "Piel Seca"
     ],
-    "compatibility": "Cicatrización y confort",
+    "compatibility": "Recuperación de piel dañada",
     "price": 43.8,
-    "image": "./images/products/purito-no1-serum.webp",
+    "image": "./images/products/purito-no.1-serum.webp",
     "gallery": [
-      "./images/products/purito-no1-serum.webp"
+      "./images/products/purito-no.1-serum.webp"
     ],
     "attributes": [
-      "Alta concentración",
-      "Centella coreana",
-      "Hipoalergénico"
+      "Centella asiática 49%",
+      "Niacinamida",
+      "Péptidos"
     ],
-    "ingredients": "Centella fermentada, asiaticoside y ácido hialurónico.",
-    "benefits": "Fórmula maestra de Purito para calmar brotes de inflamación aguda y restaurar el manto hidrolipídico.",
-    "use": "Distribuye suavemente sobre las áreas afectadas o en todo el rostro."
+    "ingredients": "Centella asiática al 49%, niacinamida y pantenol.",
+    "benefits": "Fórmula de alivio que apaga rojeces, suaviza el tacto áspero y fortalece las defensas naturales de la epidermis.",
+    "use": "Aplica de 2 a 3 gotas sobre rostro y cuello."
   },
   {
     "id": 41,
     "brand": "ROUND LAB",
-    "title": "Birch Juice Moisturizing Sunscreen Cream SPF 50+",
+    "title": "Round Lab Sunscreen",
+    "category": "Protector Solar",
+    "skinTypes": [
+      "Piel Seca",
+      "Piel Sensible/Rojeces",
+      "Piel Grasa/Mixta"
+    ],
+    "compatibility": "Top Ventas Corea / Hidratante",
+    "price": 27.6,
+    "image": "./images/products/raund-lab-round-lab-sunscreen.jpg",
+    "gallery": [
+      "./images/products/raund-lab-round-lab-sunscreen.jpg"
+    ],
+    "attributes": [
+      "Savia de Abedul",
+      "Ácido Hialurónico Vita",
+      "Galardonado"
+    ],
+    "ingredients": "Savia de abedul de Inje, ácido hialurónico Vita y filtros UV químicos avanzados.",
+    "benefits": "El protector solar #1 en Corea del Sur; hidrata como una loción fresca de rápida absorción sin dejar marcas blancas ni brillos.",
+    "use": "Aplica generosamente en rostro y cuello cada mañana."
+  },
+  {
+    "id": 42,
+    "brand": "ROUND LAB",
+    "title": "Round Lab Sun UV",
     "category": "Protector Solar",
     "skinTypes": [
       "Piel Seca",
       "Piel Grasa/Mixta"
     ],
-    "compatibility": "El protector más vendido de Corea",
-    "price": 27.6,
-    "image": "./images/products/round-lab-sunscreen-cream.webp",
-    "gallery": [
-      "./images/products/round-lab-sunscreen-cream.webp"
-    ],
-    "attributes": [
-      "Savia de Abedul",
-      "SPF 50+ PA++++",
-      "Top 1 en Corea"
-    ],
-    "ingredients": "Savia de abedul de Inje, ácido hialurónico y filtros solares orgánicos.",
-    "benefits": "Hidrata como una crema ligera mientras brinda la máxima protección solar aprobada sin dejar rastro blanco ni sensación grasosa.",
-    "use": "Aplica en el rostro antes de salir de casa como último paso de tu rutina matutina."
-  },
-  {
-    "id": 42,
-    "brand": "ROUND LAB",
-    "title": "Birch Juice Moisturizing Sun UV Serum SPF 50+",
-    "category": "Protector Solar",
-    "skinTypes": [
-      "Piel Grasa/Mixta",
-      "Piel Seca"
-    ],
-    "compatibility": "Formato Sérum Solar Ultraligero",
+    "compatibility": "Protección UV Esencial",
     "price": 27.47,
-    "image": "./images/products/round-lab-sun-uv-serum.webp",
+    "image": "./images/products/raund-lab-round-lab-sun-uv.jpg",
     "gallery": [
-      "./images/products/round-lab-sun-uv-serum.webp"
+      "./images/products/raund-lab-round-lab-sun-uv.jpg"
     ],
     "attributes": [
-      "Textura Serum Acuoso",
-      "Absorción Instantánea",
-      "SPF 50+"
+      "SPF 50+ PA++++",
+      "Savia de Abedul",
+      "Ligero"
     ],
-    "ingredients": "Savia de abedul de alta pureza, vita-ácido hialurónico y niacinamida.",
-    "benefits": "Para quienes odian la textura pesada del protector solar: absorción inmediata como un suero hidratante refrescante.",
-    "use": "Aplica 2 a 3 goteros distribuyéndolos de forma uniforme."
+    "ingredients": "Extracto de abedul purificado y filtros fotoestables.",
+    "benefits": "Aporta hidratación profunda y frescura botánica mientras bloquea los rayos UV con textura sedosa.",
+    "use": "Aplica al terminar tu rutina de día."
   },
   {
     "id": 43,
     "brand": "SKIN1004",
-    "title": "Madagascar Centella Asiatica 100 Ampoule",
+    "title": "Madagascar Centella",
     "category": "Sérums",
     "skinTypes": [
       "Piel Sensible/Rojeces",
       "Piel Grasa/Mixta",
       "Tendencia al Acné"
     ],
-    "compatibility": "100% Extracto Botánico Puro",
+    "compatibility": "100% Centella Silvestre",
     "price": 36.9,
-    "image": "./images/products/skin1004-madagascar-centella.webp",
+    "image": "./images/products/skin1004-madagascar-centella.jpg",
     "gallery": [
-      "./images/products/skin1004-madagascar-centella.webp"
+      "./images/products/skin1004-madagascar-centella.jpg"
     ],
     "attributes": [
       "Centella 100%",
-      "Madagascar",
+      "Cero irritación",
       "Equilibrante"
     ],
-    "ingredients": "Extracto puro al 100% de centella asiática cosechada en Madagascar.",
-    "benefits": "Un solo ingrediente de máxima pureza para aliviar rojeces, acelerar cicatrización y reparar la barrera sin saturar la piel.",
-    "use": "Aplica 2 a 3 gotas dando suaves toques sobre el rostro limpio."
+    "ingredients": "100% Extracto de Centella Asiática cosechada en Madagascar.",
+    "benefits": "Ampolla icónica con extracto puro de Madagascar que calma inflamaciones, reduce rojeces y devuelve la elasticidad a la piel.",
+    "use": "Deposita 2 a 3 gotas en el rostro y masajea suavemente."
   },
   {
     "id": 44,
     "brand": "SKIN1004",
-    "title": "Centella Poremizing Fresh Ampoule",
+    "title": "Ampoule Poremizing",
     "category": "Sérums",
     "skinTypes": [
       "Piel Grasa/Mixta",
@@ -1062,76 +1069,78 @@ export const PRODUCTS: Product[] = [
     ],
     "compatibility": "Poros dilatados y exceso de sebo",
     "price": 32.95,
-    "image": "./images/products/skin1004-ampoule-poremizing.webp",
+    "image": "./images/products/skin1004-ampoule-poremizing.jpg",
     "gallery": [
-      "./images/products/skin1004-ampoule-poremizing.webp"
+      "./images/products/skin1004-ampoule-poremizing.jpg"
     ],
     "attributes": [
       "Sal Rosa del Himalaya",
-      "Péptidos 9",
-      "Minimizador"
+      "Péptidos tensores",
+      "Control grasa"
     ],
-    "ingredients": "Sal rosa del Himalaya, extracto de centella y complejo de 9 péptidos tensores.",
-    "benefits": "Limpia y purifica los poros a profundidad a la vez que recupera la elasticidad del poro para evitar que se dilate.",
-    "use": "Aplica mañana y noche antes de tu crema hidratante."
+    "ingredients": "Extracto de centella asiática, sal rosa del Himalaya y complejo de 9 péptidos.",
+    "benefits": "Ampolla con sal rosa del Himalaya rica en 80 minerales que purifica los poros en profundidad y mejora la firmeza.",
+    "use": "Aplica después del tónico enfocándote en nariz y mejillas."
   },
   {
     "id": 45,
     "brand": "SKIN1004",
-    "title": "Centella Tone Brightening Capsule Ampoule",
+    "title": "Ampoule Tone Brightening",
     "category": "Sérums",
     "skinTypes": [
       "Antimanchas",
       "Piel Seca"
     ],
-    "compatibility": "Luminosidad y Tono Parejo",
+    "compatibility": "Cápsulas iluminadoras antimanchas",
     "price": 34.95,
-    "image": "./images/products/skin1004-ampoule-tone-brightening.webp",
+    "image": "./images/products/skin1004-ampoule-tone-brightening.jpg",
     "gallery": [
-      "./images/products/skin1004-ampoule-tone-brightening.webp"
+      "./images/products/skin1004-ampoule-tone-brightening.jpg"
     ],
     "attributes": [
-      "MadeWhite™",
+      "MadeWhite encapsulado",
       "Niacinamida 4%",
-      "Ácido Tranexámico"
+      "Tono radiante"
     ],
-    "ingredients": "MadeWhite patentado (centella microencapsulada), niacinamida al 4% y ácido tranexámico al 2%.",
-    "benefits": "Microcápsulas que se funden al contacto para aclarar manchas oscuras, pecas y marcas rebeldes sin provocar fotosensibilidad.",
-    "use": "Aplica mañana y noche para potenciar la luminosidad natural."
+    "ingredients": "Centella asiática al 77%, MadeWhite encapsulado y niacinamida al 4%.",
+    "benefits": "Cápsulas que se funden al contacto liberando agentes aclarantes naturales que difuminan manchas oscuras y pecas solares.",
+    "use": "Aplica 2 a 3 gotas mañana y noche."
   },
   {
     "id": 46,
     "brand": "SKIN1004",
-    "title": "Centella Hyalu-Cica Water-Fit Sun Serum SPF 50+",
+    "title": "Sun Serum UV",
     "category": "Protector Solar",
     "skinTypes": [
-      "Todos"
+      "Piel Seca",
+      "Piel Sensible/Rojeces",
+      "Piel Grasa/Mixta"
     ],
-    "compatibility": "Textura Suero Ligero Invisible",
+    "compatibility": "Textura Suero Ultraligero",
     "price": 28.7,
-    "image": "./images/products/skin1004-sun-serum-uv.webp",
+    "image": "./images/products/skin1004-sun-serum-uv.jpg",
     "gallery": [
-      "./images/products/skin1004-sun-serum-uv.webp"
+      "./images/products/skin1004-sun-serum-uv.jpg"
     ],
     "attributes": [
       "Hyalu-Cica",
       "Sin efecto blanco",
-      "Calmante"
+      "Acabado fresco"
     ],
-    "ingredients": "Fórmula patentada Hyalu-Cica (ácido hialurónico + centella asiática) y extracto de té verde.",
-    "benefits": "Uno de los protectores más amados del mundo: sensación de crema hidratante ligera con cero pegajosidad y cero brillo excesivo.",
-    "use": "Aplica generosamente sobre rostro y cuello tras la crema o directamente tras el sérum."
+    "ingredients": "Fórmula Hyalu-Cica patentada (ácido hialurónico + centella) y brotes de té verde.",
+    "benefits": "La sensación de un sérum ligero con la más alta protección UV. Deja la piel descansada, fresca y perfectamente hidratada.",
+    "use": "Aplica generosamente en rostro y cuello como último paso matutino."
   },
   {
     "id": 47,
     "brand": "SKIN1004",
-    "title": "Probio-Cica Intensive Ampoule",
+    "title": "Probio-Cica Intensive",
     "category": "Sérums",
     "skinTypes": [
       "Piel Seca",
       "Piel Sensible/Rojeces"
     ],
-    "compatibility": "Microbioma y Barrera Muy Dañada",
+    "compatibility": "Reparación intensiva de barrera",
     "price": 46.34,
     "image": "./images/products/skin1004-probio-cica-intensive.webp",
     "gallery": [
@@ -1139,448 +1148,230 @@ export const PRODUCTS: Product[] = [
     ],
     "attributes": [
       "Centella Fermentada",
-      "Probióticos",
-      "Textura Rica"
+      "Ceramidas",
+      "Nutrición intensa"
     ],
-    "ingredients": "Centella fermentada con lactobacilos de la isla de Madagascar, ceramidas y cica.",
-    "benefits": "Nutre el microbioma cutáneo y sella microfisuras en pieles extremadamente reactivas, secas o descamadas.",
-    "use": "Aplica de noche con un suave masaje en rostro y cuello."
+    "ingredients": "Centella asiática fermentada con lactobacilos, ceramida NP y fitoesteroles.",
+    "benefits": "Ampolla lechosa densa que repara la barrera cutánea dañada por exfoliantes o agresiones ambientales mediante probióticos botánicos.",
+    "use": "Aplica en la noche tras el tónico para despertar con la piel restaurada."
   },
   {
     "id": 48,
     "brand": "SKIN1004",
-    "title": "Travel Kit Madagascar Centella (5 Pasos)",
+    "title": "Travel Kit Estándar",
     "category": "Dispositivos & Sets",
     "skinTypes": [
-      "Todos"
+      "Piel Sensible/Rojeces",
+      "Piel Grasa/Mixta",
+      "Piel Seca"
     ],
-    "compatibility": "Rutina completa de viaje",
+    "compatibility": "Kit Completo de Viaje",
     "price": 50.7,
-    "image": "./images/products/skin1004-travel-kit-estandar.webp",
+    "image": "./images/products/skin1004-travel-kit-estandar.jpg",
     "gallery": [
-      "./images/products/skin1004-travel-kit-estandar.webp"
+      "./images/products/skin1004-travel-kit-estandar.jpg"
     ],
     "attributes": [
-      "5 Productos",
-      "Aceite + Espuma + Tónico + Ampolla + Crema",
-      "Aprobado Cabina"
+      "5 Miniaturas",
+      "Rutina completa",
+      "Aprobado para avión"
     ],
-    "ingredients": "Rutina completa de la línea clásica Madagascar Centella en envases miniatura oficiales.",
-    "benefits": "Todo lo que necesitas para cuidar tu piel mientras viajas sin romper tu rutina de skincare coreano.",
-    "use": "Sigue los pasos secuenciales: Desmaquillado > Limpieza > Tónico > Ampolla > Hidratación."
+    "ingredients": "Línea completa Madagascar Centella pura.",
+    "benefits": "Incluye aceite limpiador, espuma, tónico calmante, ampolla pura y crema hidratante en cómodos tamaños de viaje.",
+    "use": "Sigue los pasos 1 al 5 en tu rutina diaria."
   },
   {
     "id": 49,
     "brand": "SKIN1004",
-    "title": "Travel Kit Centella Poremizing (4 Pasos)",
+    "title": "Travel Kit Poremizing",
     "category": "Dispositivos & Sets",
     "skinTypes": [
       "Piel Grasa/Mixta",
       "Tendencia al Acné"
     ],
-    "compatibility": "Rutina específica control poros",
+    "compatibility": "Kit de Viaje Piel Grasa y Poros",
     "price": 40.23,
-    "image": "./images/products/skin1004-travel-kit-poremizing.webp",
+    "image": "./images/products/skin1004-travel-kit-poremizing.jpg",
     "gallery": [
-      "./images/products/skin1004-travel-kit-poremizing.webp"
+      "./images/products/skin1004-travel-kit-poremizing.jpg"
     ],
     "attributes": [
-      "Línea Poremizing",
-      "Sal Rosa Himalaya",
-      "Control Grasa"
+      "Miniaturas Poros",
+      "Sal del Himalaya",
+      "Control sebo"
     ],
-    "ingredients": "Limpiador profundo, tónico astringente suave, ampolla concentrada y gel crema ligero.",
-    "benefits": "El kit de rescate para mantener los poros limpios y el brillo controlado en climas cálidos y viajes.",
-    "use": "Rutina completa mañana y noche para equilibrar la zona T."
+    "ingredients": "Línea completa Poremizing con sal rosa del Himalaya.",
+    "benefits": "Kit de viaje especializado para piel grasa y poros dilatados que purifica y matifica sin resecar.",
+    "use": "Ideal para llevar al gimnasio o de viaje."
   },
   {
     "id": 50,
-    "brand": "STAGE",
-    "title": "Cica-Tree Water Jelly Sun SPF 50+",
-    "category": "Protector Solar",
+    "brand": "TAGE",
+    "title": "Tarte Cica-Tree Water Jelly",
+    "category": "Hidratantes",
     "skinTypes": [
-      "Tendencia al Acné",
-      "Piel Grasa/Mixta"
+      "Piel Grasa/Mixta",
+      "Tendencia al Acné"
     ],
-    "compatibility": "Protector Solar en Gel Acuoso Refrescante",
+    "compatibility": "Gel acuoso anti-brillos",
     "price": 23.33,
-    "image": "./images/products/stage-cica-tree-water-jelly.webp",
+    "image": "./images/products/tage-tarte-cica-tree-water-jelly.jpg",
     "gallery": [
-      "./images/products/stage-cica-tree-water-jelly.webp"
+      "./images/products/tage-tarte-cica-tree-water-jelly.jpg"
     ],
     "attributes": [
-      "Tea Tree + Cica",
-      "Gel Acuoso",
-      "Efecto Refrescante"
+      "Árbol de Té",
+      "Centella Asiatica",
+      "Cero Grasa"
     ],
-    "ingredients": "Agua de árbol de té australiano, centella asiática y filtros UV ultraligeros.",
-    "benefits": "Textura acuosa tipo jalea que calma al instante los brotes activos de acné mientras protege del sol con sensación cero peso.",
-    "use": "Aplica de manera uniforme en rostro y cuello."
+    "ingredients": "Extracto de árbol de té, centella asiática y agua de glaciar.",
+    "benefits": "Gel acuoso que apaga la inflamación de granitos, calma rojeces y entrega hidratación fresca sin dejar sensación oleosa.",
+    "use": "Aplica una pequeña cantidad tras el suero."
   },
   {
     "id": 51,
     "brand": "TOCOBO",
-    "title": "Cotton Soft Sun Stick SPF 50+",
+    "title": "Tocobo Cotton Sun Stick",
     "category": "Protector Solar",
     "skinTypes": [
       "Piel Grasa/Mixta",
       "Tendencia al Acné"
     ],
-    "compatibility": "Acabado Mate Sedoso Polvo de Algodón",
+    "compatibility": "Acabado Mate Aterciopelado",
     "price": 24.55,
-    "image": "./images/products/tocobo-cotton-sun-stick.webp",
+    "image": "./images/products/tocobo-tocobo-cotton-sun-stick.jpg",
     "gallery": [
-      "./images/products/tocobo-cotton-sun-stick.webp"
+      "./images/products/tocobo-tocobo-cotton-sun-stick.jpg"
     ],
     "attributes": [
-      "Extracto de Algodón",
-      "Micro Sílice",
-      "Mate Real"
+      "Micro polvo de algodón",
+      "Efecto Primer",
+      "Vegano"
     ],
-    "ingredients": "Extracto de algodón, complejo AC Herb calmante y polvo de sílice absorbente de sebo.",
-    "benefits": "El protector en barra más famoso por su acabado suave como terciopelo: no deja brillo, matifica la piel y se reaplica sobre el maquillaje con facilidad.",
-    "use": "Desliza en rostro y cuello cada 2 a 3 horas."
+    "ingredients": "Extracto de algodón, complejo AC Herb y micro polvos absorbentes de sebo.",
+    "benefits": "Barra de protección solar que deja la piel completamente mate, sedosa y libre de brillos durante horas. Ideal para reaplicar sobre maquillaje.",
+    "use": "Desliza la barra por todo el rostro cada 2 o 3 horas."
   },
   {
     "id": 52,
     "brand": "TOCOBO",
-    "title": "Bio Watery Sun Cream SPF 50+",
+    "title": "Tocobo Bio Sun Watery",
     "category": "Protector Solar",
     "skinTypes": [
       "Piel Seca",
       "Piel Grasa/Mixta"
     ],
-    "compatibility": "Protector hidratante ligero",
+    "compatibility": "Hidratación ligera y fresca",
     "price": 25.8,
-    "image": "./images/products/tocobo-bio-sun-watery.webp",
+    "image": "./images/products/tocobo-tocobo-bio-sun-watery.jpg",
     "gallery": [
-      "./images/products/tocobo-bio-sun-watery.webp"
+      "./images/products/tocobo-tocobo-bio-sun-watery.jpg"
     ],
     "attributes": [
-      "Ácido Bio-Hialurónico",
-      "Beta-Glucano",
-      "Cero residuo"
+      "Extracto de Judía Mung",
+      "Ácido Hialurónico",
+      "Fresco"
     ],
-    "ingredients": "Ácido bio-hialurónico natural, beta-glucano de hongos y extracto de flor de algodón.",
-    "benefits": "Sensación fresca y ligera como agua que calma e hidrata la piel mientras brinda alta protección UVB y UVA.",
-    "use": "Aplica en rostro y cuello antes del maquillaje o exposición solar."
+    "ingredients": "Extracto de judía mung bio-fermentada, ácido hialurónico y bio-retinol.",
+    "benefits": "Protector solar químico con textura fluida de loción acuosa que hidrata y calma sin dejar sensación pegajosa ni residuo blanco.",
+    "use": "Aplica uniformemente por la mañana antes de salir."
   },
   {
     "id": 53,
     "brand": "VT COSMETICS",
-    "title": "VT Reedle Shot 100 PDRN Essence",
+    "title": "VT Reedle Shot PDRN",
     "category": "Sérums",
     "skinTypes": [
-      "Todos"
+      "Antimanchas",
+      "Piel Seca",
+      "Piel Grasa/Mixta"
     ],
-    "compatibility": "Micro-Espículas de Cica y PDRN",
+    "compatibility": "Microagujas botánicas / Renovación",
     "price": 45.39,
-    "image": "./images/products/vt-reedle-shot-pdrn.webp",
+    "image": "./images/products/vt-reedle-vt-reedle-shot-pdrn.jpg",
     "gallery": [
-      "./images/products/vt-reedle-shot-pdrn.webp"
+      "./images/products/vt-reedle-vt-reedle-shot-pdrn.jpg"
     ],
     "attributes": [
-      "Cica Reedle™",
-      "PDRN Ginseng",
-      "Penetración Celular"
+      "Cica Reedle 100",
+      "Microespículas",
+      "Absorción profunda"
     ],
-    "ingredients": "Microespículas minerales de cica purificada, PDRN botánico de panax ginseng y centella.",
-    "benefits": "Tecnología coreana viral de microestimulación que abre canales microscópicos temporales en la piel para multiplicar la absorción y renovación celular.",
-    "use": "Aplica de noche sobre la piel limpia dando presiones suaves (sentirás un cosquilleo natural)."
+    "ingredients": "Microespículas minerales naturales con extracto de centella asiática purificada.",
+    "benefits": "Tratamiento intensivo con microagujas minerales naturales purificadas con centella que abren microcanales para multiplicar la absorción dérmica.",
+    "use": "Usa solo de noche sobre la piel limpia antes de tus sueros. Presiona suavemente."
   },
   {
     "id": 54,
     "brand": "VT COSMETICS",
-    "title": "VT PDRN Cápsulas Rejuvenecedoras",
+    "title": "VT PDRN Cápsulas",
     "category": "Sérums",
     "skinTypes": [
       "Piel Seca",
       "Antimanchas"
     ],
-    "compatibility": "Dosis monodosis concentrada",
+    "compatibility": "Cápsulas de PDRN y Firmeza",
     "price": 40.53,
-    "image": "./images/products/vt-pdrn-capsulas.webp",
+    "image": "./images/products/vt-reedle-vt-pdrn-capsulas.jpg",
     "gallery": [
-      "./images/products/vt-pdrn-capsulas.webp"
+      "./images/products/vt-reedle-vt-pdrn-capsulas.jpg"
     ],
     "attributes": [
-      "Phyto-PDRN Panax",
-      "Monodosis Frescas",
-      "Lifting Intenso"
+      "PDRN Concentrado",
+      "Cápsulas monodosis",
+      "Firmeza"
     ],
-    "ingredients": "Phyto-PDRN extraído de ginseng silvestre coreano, ceramidas y péptidos.",
-    "benefits": "Cápsulas selladas que mantienen la pureza de los activos bioidénticos para devolver la densidad, firmeza y tersura a la piel madura o apagada.",
-    "use": "Gira la punta de la cápsula y aplica todo su contenido por la noche en rostro y cuello."
+    "ingredients": "PDRN concentrado, ceramidas y escualano vegetal.",
+    "benefits": "Cápsulas individuales herméticas de PDRN puro que revitalizan y dan volumen a pieles cansadas o con pérdida de elasticidad.",
+    "use": "Abre una cápsula de noche y distribuye el aceite ligero sobre el rostro."
   },
   {
     "id": 55,
     "brand": "COSRX",
-    "title": "Master Patch Acne Pimple Clear (24 Parches)",
-    "category": "Limpiadores",
+    "title": "COSRX Acne Pimple Patch",
+    "category": "Mascarillas",
     "skinTypes": [
-      "Tendencia al Acné"
+      "Tendencia al Acné",
+      "Piel Grasa/Mixta"
     ],
-    "compatibility": "Parches hidrocoloides para brotes",
-    "price": 6,
-    "image": "./images/products/cosrx-acne-pimple-patch.webp",
+    "compatibility": "Tratamiento puntual de acné",
+    "price": 6.0,
+    "image": "./images/products/cosrx-cosrx-acne-pimple-patch.jpg",
     "gallery": [
-      "./images/products/cosrx-acne-pimple-patch.webp"
+      "./images/products/cosrx-cosrx-acne-pimple-patch.jpg"
     ],
     "attributes": [
-      "Hidrocoloide puro",
-      "24 Parches en 3 tamaños",
-      "Invisible"
+      "Hidrocoloide médico",
+      "Invisible",
+      "Absorbe grasa"
     ],
-    "ingredients": "Material hidrocoloide médico adhesivo hipoalergénico.",
-    "benefits": "Absorbe el pus y las bacterias del grano mientras duermes, evitando la inflamación y previniendo la formación de marcas o cicatrices.",
-    "use": "Coloca sobre la piel limpia y seca justo encima de la imperfección."
+    "ingredients": "Lámina hidrocoloide médica esterilizada.",
+    "benefits": "Parches hidrocoloides que absorben las secreciones de los granitos activos durante la noche, acelerando su desaparición y evitando marcas.",
+    "use": "Pega el parche adecuado sobre el granito limpio y seco antes de cualquier crema."
   },
   {
     "id": 56,
     "brand": "DR. MELAXIN",
-    "title": "Dr. Melaxin BP Pore & Blemish Ampoule",
+    "title": "Dr. Melaxin Ampoule",
     "category": "Sérums",
     "skinTypes": [
-      "Piel Grasa/Mixta",
-      "Antimanchas"
+      "Antimanchas",
+      "Piel Grasa/Mixta"
     ],
-    "compatibility": "Poros dilatados y manchas post-inflamatorias",
+    "compatibility": "Aclarante de manchas y poros",
     "price": 34.68,
-    "image": "./images/products/dr-melaxin-ampoule.webp",
+    "image": "./images/products/dr-melaxin-dr.-melaxin-ampoule.jpg",
     "gallery": [
-      "./images/products/dr-melaxin-ampoule.webp"
+      "./images/products/dr-melaxin-dr.-melaxin-ampoule.jpg"
     ],
     "attributes": [
-      "Bio-Peeling",
-      "Retracción de Poros",
-      "Tono Uniforme"
-    ],
-    "ingredients": "Complejo BP patentado, niacinamida, ácido succínico y extracto de manzana verde.",
-    "benefits": "Fórmula de cosmecéutica coreana que regula la proliferación sebácea, afina poros abiertos y desvanece manchas de acné rebeldes.",
-    "use": "Aplica de 2 a 3 gotas mañana y noche."
-  },
-  {
-    "id": 57,
-    "brand": "ANUA",
-    "title": "Heartleaf 77% Soothing Toner",
-    "category": "Tónicos & Esencias",
-    "skinTypes": [
-      "Piel Grasa/Mixta",
-      "Piel Sensible/Rojeces",
-      "Tendencia al Acné"
-    ],
-    "compatibility": "Tónico viral N°1 calmante para rojeces y acné",
-    "price": 41.18,
-    "image": "./images/products/anua-heartleaf-77-toner.webp",
-    "gallery": [
-      "./images/products/anua-heartleaf-77-toner.webp"
-    ],
-    "attributes": [
-      "Heartleaf 77%",
-      "Calmante",
-      "Anti-rojeces"
-    ],
-    "ingredients": "Extracto de Houttuynia Cordata (77%), centella asiática, pantenol y extracto de manzanilla.",
-    "benefits": "El tónico más premiado de Corea: calma brotes agudos de acné, reduce la temperatura de la piel, elimina rojeces y balancea el pH sin irritar.",
-    "use": "Aplica con un disco de algodón o directamente con las manos con suaves toques tras la limpieza."
-  },
-  {
-    "id": 58,
-    "brand": "ANUA",
-    "title": "Heartleaf Pore Control Cleansing Oil",
-    "category": "Limpiadores",
-    "skinTypes": [
-      "Piel Grasa/Mixta",
-      "Tendencia al Acné",
-      "Todos"
-    ],
-    "compatibility": "Primer paso doble limpieza / Desincrustante de puntos negros",
-    "price": 39.7,
-    "image": "./images/products/anua-heartleaf-cleansing-oil.webp",
-    "gallery": [
-      "./images/products/anua-heartleaf-cleansing-oil.webp"
-    ],
-    "attributes": [
-      "No Comedogénico",
-      "Heartleaf",
-      "Elimina Puntos Negros"
-    ],
-    "ingredients": "Extracto de Heartleaf, aceite de jojoba, aceite de oliva y aceite de semilla de macadamia.",
-    "benefits": "Aceite limpiador no comedogénico que derrite el sebo oxidado de los poros, puntos negros y maquillaje a prueba de agua sin taponar.",
-    "use": "Masajea suavemente sobre el rostro seco durante 1 minuto, añade agua tibia para emulsionar en leche blanca y enjuaga."
-  },
-  {
-    "id": 59,
-    "brand": "BEAUTY OF JOSEON",
-    "title": "Relief Sun: Rice + Probiotics SPF 50+ PA++++",
-    "category": "Protector Solar",
-    "skinTypes": [
-      "Piel Seca",
-      "Piel Grasa/Mixta",
-      "Piel Sensible/Rojeces"
-    ],
-    "compatibility": "Protector solar químico bestseller mundial hidratante",
-    "price": 31.76,
-    "image": "./images/products/boj-relief-sun-rice.webp",
-    "gallery": [
-      "./images/products/boj-relief-sun-rice.webp"
-    ],
-    "attributes": [
-      "Extracto de Arroz 30%",
-      "Probióticos",
-      "Acabado Glow Natural"
-    ],
-    "ingredients": "Extracto de salvado de arroz al 30%, complejo fermentado de probióticos y niacinamida.",
-    "benefits": "Protector solar orgánico cremoso y ligero que nutre la piel como una crema hidratante iluminadora sin residuo blanco ni olor químico.",
-    "use": "Aplica uniformemente en rostro, cuello y orejas como último paso de tu rutina matutina."
-  },
-  {
-    "id": 60,
-    "brand": "BEAUTY OF JOSEON",
-    "title": "Matte Sun Stick: Mugwort + Camelia SPF 50+",
-    "category": "Protector Solar",
-    "skinTypes": [
-      "Piel Grasa/Mixta",
-      "Tendencia al Acné"
-    ],
-    "compatibility": "Reaplicación mate sin grasa sobre maquillaje",
-    "price": 32.83,
-    "image": "./images/products/boj-matte-sun-stick.webp",
-    "gallery": [
-      "./images/products/boj-matte-sun-stick.webp"
-    ],
-    "attributes": [
-      "Mugwort Calmante",
-      "Polvo de Sílice",
-      "Cero Brillos"
-    ],
-    "ingredients": "Extracto de artemisa (mugwort), extracto de té verde de camelia y polvo matificante de sílice.",
-    "benefits": "Protector solar en barra diseñado junto a dermatólogos para controlar el sebo y reaplicar en segundos dejando un tacto aterciopelado mate.",
-    "use": "Desliza en rostro y cuello cada 2 a 3 horas sin arrastrar el maquillaje."
-  },
-  {
-    "id": 61,
-    "brand": "BEAUTY OF JOSEON",
-    "title": "Revive Eye Serum: Ginseng + Retinal",
-    "category": "Ojos & Labios",
-    "skinTypes": [
-      "Todos",
-      "Piel Seca",
-      "Antimanchas"
-    ],
-    "compatibility": "Contorno antiedad para arrugas, ojeras y firmeza",
-    "price": 31,
-    "image": "./images/products/boj-revive-eye-serum.webp",
-    "gallery": [
-      "./images/products/boj-revive-eye-serum.webp"
-    ],
-    "attributes": [
-      "Ginseng 10%",
-      "Retinal Liposomado 2%",
-      "Antiarrugas"
-    ],
-    "ingredients": "Extracto de raíz de ginseng al 10%, retinal liposomado al 2%, niacinamida y ceramidas.",
-    "benefits": "Suero de contorno con retinal altamente bioasimilable que combate arrugas profundas y estimula el colágeno con suavidad.",
-    "use": "Aplica de noche de 1 a 2 toques suaves con el dedo anular alrededor del hueso orbital."
-  },
-  {
-    "id": 62,
-    "brand": "AXIS-Y",
-    "title": "Vegan Collagen Eye Serum",
-    "category": "Ojos & Labios",
-    "skinTypes": [
-      "Todos",
-      "Piel Sensible/Rojeces",
-      "Piel Seca"
-    ],
-    "compatibility": "Colágeno vegano y aplicador frío descongestivo",
-    "price": 41.18,
-    "image": "./images/products/axis-y-collagen-eye-serum.webp",
-    "gallery": [
-      "./images/products/axis-y-collagen-eye-serum.webp"
-    ],
-    "attributes": [
-      "Colágeno Vegano",
-      "Aplicador Cool-Touch",
-      "Anti-Hinchazón"
-    ],
-    "ingredients": "Colágeno vegano fermentado de bajo peso molecular, extracto de flor de caléndula, cafeína y péptidos.",
-    "benefits": "Desinflama párpados y ojeras cansadas al instante con su aplicador metálico ergonómico mientras rellena líneas finas.",
-    "use": "Presiona suavemente el tubo y desliza el aplicador frío en movimientos circulares de adentro hacia afuera."
-  },
-  {
-    "id": 63,
-    "brand": "BIODANCE",
-    "title": "Bio-Collagen Real Deep Mask (Caja 4 Unidades)",
-    "category": "Mascarillas",
-    "skinTypes": [
-      "Piel Seca",
+      "Bio-peeling",
       "Antimanchas",
-      "Piel Sensible/Rojeces"
+      "Poros limpios"
     ],
-    "compatibility": "Mascarilla hidrogel nocturna de colágeno puro ultra viral",
-    "price": 33.56,
-    "image": "./images/products/biodance-collagen-mask-box.webp",
-    "gallery": [
-      "./images/products/biodance-collagen-mask-box.webp"
-    ],
-    "attributes": [
-      "Caja de 4 Mascarillas",
-      "Hidrogel Transparente",
-      "Ultra Glow"
-    ],
-    "ingredients": "Colágeno oligo-peptídico de 243 Daltons, ácido oligohialurónico y probióticos galactomyces.",
-    "benefits": "Se vuelve totalmente transparente a medida que la piel absorbe todos los nutrientes durante la noche; poros invisibles y firmeza de cristal.",
-    "use": "Aplica tras tu rutina de noche y déjala actuar de 3 a 4 horas o durante toda la noche."
-  },
-  {
-    "id": 64,
-    "brand": "BIODANCE",
-    "title": "Bio-Collagen Real Deep Mask (Individual 1 Unidad)",
-    "category": "Mascarillas",
-    "skinTypes": [
-      "Piel Seca",
-      "Antimanchas",
-      "Piel Sensible/Rojeces"
-    ],
-    "compatibility": "Sobre individual para probar el efecto de porcelana",
-    "price": 9.12,
-    "image": "./images/products/biodance-collagen-mask-individual.webp",
-    "gallery": [
-      "./images/products/biodance-collagen-mask-individual.webp"
-    ],
-    "attributes": [
-      "1 Sobre Individual",
-      "243Da Oligo Colágeno",
-      "Efecto Flash"
-    ],
-    "ingredients": "Colágeno oligo-peptídico de 243 Daltons, ácido oligohialurónico y probióticos galactomyces.",
-    "benefits": "Formato individual ideal para probar la mascarilla viral de Corea o para lucir una piel luminosa antes de un evento importante.",
-    "use": "Aplica después del sérum y retira una vez que se vuelva completamente transparente."
-  },
-  {
-    "id": 65,
-    "brand": "BIODANCE",
-    "title": "Hydro Cera-Nol Real Deep Mask Caviar (Caja 4 Unidades)",
-    "category": "Mascarillas",
-    "skinTypes": [
-      "Piel Seca",
-      "Piel Sensible/Rojeces"
-    ],
-    "compatibility": "Reparación intensiva de barrera y ceramidas",
-    "price": 33.56,
-    "image": "./images/products/biodance-caviar-mask-box.webp",
-    "gallery": [
-      "./images/products/biodance-caviar-mask-box.webp"
-    ],
-    "attributes": [
-      "Cera-Nol 50,000ppm",
-      "Ceramidas + Pantenol",
-      "Calmante Profundo"
-    ],
-    "ingredients": "Complejo Cera-Nol (ceramida NP, pantenol y ácido hialurónico) con agua glaciar de alta pureza.",
-    "benefits": "La variante reparadora para pieles deshidratadas y rojeces: alivia la irritación, reconstruye la barrera celular y retiene la humedad.",
-    "use": "Coloca sobre la piel limpia de 3 a 5 horas o duerme con ella puesta para despertar con piel descansada."
+    "ingredients": "Niacinamida al 5%, ácido tranexámico y complejo calmante vegetal.",
+    "benefits": "Ampolla terapéutica formulada para aclarar manchas oscuras, corregir imperfecciones y refinar la superficie de los poros.",
+    "use": "Aplica de 2 a 3 gotas en las áreas problemáticas mañana y noche."
   }
 ];
 

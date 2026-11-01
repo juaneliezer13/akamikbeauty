@@ -25,7 +25,7 @@ function handleImageError() {
     <!-- Visual Image Container -->
     <div 
       @click="emit('select', product)"
-      class="relative aspect-square overflow-hidden bg-white cursor-pointer flex items-center justify-center p-2.5 border-b border-line/40"
+      class="relative aspect-square overflow-hidden bg-blush/40 cursor-pointer"
     >
       <!-- Fallback or Placeholder -->
       <div 
@@ -49,7 +49,7 @@ function handleImageError() {
         loading="lazy"
         @load="imgLoaded = true"
         @error="handleImageError"
-        class="w-full h-full max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500 m-auto block"
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
       />
 
       <!-- Quick View Pill Hover -->
