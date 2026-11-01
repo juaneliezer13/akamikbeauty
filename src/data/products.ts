@@ -1584,8 +1584,14 @@ export const PRODUCTS: Product[] = [
   }
 ];
 
-export function generateWhatsAppLink(product: Product): string {
+export function generateWhatsAppLink(product?: Product | null): string {
   const phone = '584128956976';
+  if (!product) {
+    const text = encodeURIComponent(
+      '¡Hola Akami! ✨ Me gustaría recibir asesoría personalizada para elegir los productos ideales para mi piel.'
+    );
+    return `https://wa.me/${phone}?text=${text}`;
+  }
   const text = encodeURIComponent(
     `¡Hola Akami! ✨ Me interesa información y disponibilidad de: ${product.title} (${product.brand}) - $${product.price.toFixed(2)} USD.`
   );
