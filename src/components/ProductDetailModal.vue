@@ -53,11 +53,11 @@ function toggleAccordion(section: 'benefits' | 'ingredients' | 'use') {
         <!-- Scrollable Sheet Body -->
         <div class="overflow-y-auto no-scrollbar flex-1 pb-24">
           <!-- Gallery Carousel Section -->
-          <div class="relative aspect-[4/3] sm:aspect-[16/10] bg-blush/40 overflow-hidden">
+          <div class="relative aspect-[4/3] sm:aspect-[16/10] bg-white overflow-hidden flex items-center justify-center p-4 border-b border-line/40">
             <img
               :src="product.gallery?.[activeImageIndex] || product.image"
               :alt="product.title"
-              class="w-full h-full object-cover transition-opacity duration-300"
+              class="w-full h-full max-w-full max-h-full object-contain transition-opacity duration-300 m-auto block"
             />
 
             <!-- Gallery Dots Indicator -->
