@@ -1,5 +1,5 @@
-# 🐳 Respaldo Oficial de Docker Compose para el Servidor de Producción (GoDaddy / VPS)
-# Akami K-Beauty — Web SPA
+# 🐳 Docker Compose para Servidor (Staging / VPS)
+# Akami K-Beauty — Web SPA expuesta en puerto 23000
 
 services:
   web_akami:
@@ -7,8 +7,7 @@ services:
     container_name: cliente_akami
     restart: unless-stopped
     ports:
-      - "80:80"
-      - "443:443"
+      - "${PORT:-23000}:80"
     volumes:
       - ./html:/usr/share/nginx/html:ro
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro

@@ -10,6 +10,6 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 # Copiar el directorio html con todos los assets compilados y banners optimizados
 COPY html /usr/share/nginx/html
 
-EXPOSE 80 443
+EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
