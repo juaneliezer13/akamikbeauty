@@ -2104,16 +2104,26 @@ export const PRODUCTS: Product[] = [
   }
 ];
 
+export const WHATSAPP_PHONE = '584149025118';
+
 export function generateWhatsAppLink(product?: Product | null): string {
-  const phone = '584128956976';
+  const phone = WHATSAPP_PHONE;
   if (!product) {
     const text = encodeURIComponent(
-      '¡Hola Akami! ✨ Me gustaría recibir asesoría personalizada para elegir los productos ideales para mi piel.'
+      '¡Hola, Akami! 🌸 Me gustaría recibir asesoría personalizada para elegir los productos ideales para mi piel. ¿Podrían guiarme?'
     );
     return `https://wa.me/${phone}?text=${text}`;
   }
   const text = encodeURIComponent(
-    `¡Hola Akami! ✨ Me interesa información y disponibilidad de: ${product.title} (${product.brand}) - $${product.price.toFixed(2)} USD.`
+    `¡Hola, Akami! ✨ Me interesa información y disponibilidad de: 🌸 *${product.title}* (${product.brand}) - $${product.price.toFixed(2)} USD. ¿Me podrían asesorar?`
+  );
+  return `https://wa.me/${phone}?text=${text}`;
+}
+
+export function generateAdvisorWhatsAppLink(): string {
+  const phone = WHATSAPP_PHONE;
+  const text = encodeURIComponent(
+    '¡Hola, Akami! 🌸 Me gustaría recibir asesoría personalizada para elegir los productos ideales para mi piel. ¿Podrían guiarme?'
   );
   return `https://wa.me/${phone}?text=${text}`;
 }

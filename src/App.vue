@@ -14,6 +14,7 @@ import ProductDetailModal from './components/ProductDetailModal.vue';
 import BrandsDrawer from './components/BrandsDrawer.vue';
 import ConsultationBanner from './components/ConsultationBanner.vue';
 import Footer from './components/Footer.vue';
+import FloatingWhatsApp from './components/FloatingWhatsApp.vue';
 
 const searchQuery = ref('');
 const discoveryMode = ref<'product' | 'skin'>('product');
@@ -152,5 +153,7 @@ function resetAll() {
       :product="selectedProduct"
       @close="selectedProduct = null"
     />
+
+    <FloatingWhatsApp />
   </div>
 </template>

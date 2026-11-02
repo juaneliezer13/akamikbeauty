@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Product } from '../types';
 import { generateWhatsAppLink } from '../data/products';
+import WhatsAppIcon from './icons/WhatsAppIcon.vue';
 
 defineProps<{
   product: Product;
@@ -49,9 +50,10 @@ const emit = defineEmits<{
           target="_blank"
           rel="noopener noreferrer"
           class="card-cta"
-          title="Consultar por WhatsApp"
+          :title="`Consultar ${product.title} por WhatsApp`"
         >
-          Consultar
+          <WhatsAppIcon :size="13" />
+          <span>Consultar</span>
         </a>
       </div>
     </div>

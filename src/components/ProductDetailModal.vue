@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-import { X, MessageCircle } from 'lucide-vue-next';
+import { X } from 'lucide-vue-next';
+import WhatsAppIcon from './icons/WhatsAppIcon.vue';
 import type { Product } from '../types';
 import { generateWhatsAppLink } from '../data/products';
 
@@ -118,15 +119,18 @@ function toggleAccordion(section: 'benefits' | 'ingredients' | 'use') {
         </div>
       </div>
 
-      <div class="sheet-footer">
+      <div class="sheet-action">
         <a
           :href="generateWhatsAppLink(product)"
           target="_blank"
           rel="noopener noreferrer"
           class="sheet-cta"
         >
-          <MessageCircle :size="18" />
-          <span>Consultar disponibilidad en WhatsApp</span>
+          <WhatsAppIcon :size="20" />
+          <span>
+            <strong>Consultar disponibilidad en WhatsApp</strong>
+            <small>Respuesta rápida y asesoría directa</small>
+          </span>
         </a>
       </div>
     </div>

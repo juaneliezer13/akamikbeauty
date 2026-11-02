@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ArrowRight } from 'lucide-vue-next';
-import { generateWhatsAppLink } from '../data/products';
+import { generateAdvisorWhatsAppLink } from '../data/products';
+import WhatsAppIcon from './icons/WhatsAppIcon.vue';
 </script>
 
 <template>
@@ -13,13 +13,13 @@ import { generateWhatsAppLink } from '../data/products';
       </p>
     </div>
     <a
-      :href="generateWhatsAppLink()"
+      :href="generateAdvisorWhatsAppLink()"
       target="_blank"
       rel="noopener noreferrer"
       class="consultation-cta"
     >
+      <WhatsAppIcon :size="18" />
       <span>Chatear con una asesora</span>
-      <ArrowRight :size="16" />
     </a>
   </section>
 </template>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { Instagram, MessageCircle } from 'lucide-vue-next';
-import { generateWhatsAppLink } from '../data/products';
+import { Instagram } from 'lucide-vue-next';
+import { generateAdvisorWhatsAppLink } from '../data/products';
+import WhatsAppIcon from './icons/WhatsAppIcon.vue';
 </script>
 
 <template>
@@ -20,12 +21,13 @@ import { generateWhatsAppLink } from '../data/products';
         <Instagram :size="16" />
       </a>
       <a
-        :href="generateWhatsAppLink()"
+        :href="generateAdvisorWhatsAppLink()"
         target="_blank"
         rel="noreferrer"
-        aria-label="WhatsApp de Akami"
+        aria-label="Consultar por WhatsApp con una asesora"
+        class="footer-social footer-whatsapp"
       >
-        <MessageCircle :size="16" />
+        <WhatsAppIcon :size="16" />
       </a>
     </div>
   </footer>

@@ -644,23 +644,25 @@ h1, h2, h3, h4, h5, h6 {
 
 .card-cta {
   color: #fff;
-  background: var(--ink);
+  background: #25d366;
   border-radius: 100px;
   padding: 6px 12px;
-  font-size: 8px;
+  font-size: 8.5px;
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: all .2s;
+  transition: all .2s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.28);
 }
 
 .card-cta:hover {
-  background: #3d3d3d;
+  background: #20bd5a;
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.38);
 }
 
 /* EMPTY STATE */
@@ -746,26 +748,30 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.5;
 }
 
-.consultation a {
+.consultation a,
+.consultation-cta {
   color: #fff;
-  background: var(--ink);
+  background: #25d366;
   border-radius: 100px;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
-  padding: 12px 20px;
-  font-size: 9px;
-  font-weight: 600;
+  padding: 12px 24px;
+  font-size: 10px;
+  font-weight: 700;
   text-decoration: none;
   display: inline-flex;
-  transition: all .2s;
+  transition: all .2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.32);
 }
 
-.consultation a:hover {
-  background: #3d3d3d;
-  transform: translateY(-1px);
+.consultation a:hover,
+.consultation-cta:hover {
+  background: #20bd5a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.42);
 }
 
 /* FOOTER */
@@ -805,27 +811,42 @@ footer p {
   font-size: 9px;
 }
 
-.socials {
+.socials,
+.footer-actions {
   justify-content: center;
   gap: 14px;
   margin-top: 14px;
   display: flex;
 }
 
-.socials a {
+.socials a,
+.footer-actions a,
+.footer-social {
   color: var(--muted);
   border: 1px solid var(--line);
   border-radius: 50%;
   place-items: center;
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   display: grid;
   transition: all .2s;
+  text-decoration: none;
 }
 
-.socials a:hover {
+.socials a:hover,
+.footer-actions a:hover,
+.footer-social:hover {
   color: var(--ink);
   border-color: var(--ink);
+}
+
+.socials a.footer-whatsapp:hover,
+.footer-actions a.footer-whatsapp:hover,
+.footer-whatsapp:hover {
+  color: #fff;
+  background: #25d366;
+  border-color: #25d366;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
 }
 
 /* BRAND DRAWER */
@@ -1164,37 +1185,44 @@ footer p {
   backdrop-filter: blur(14px);
 }
 
-.sheet-action a {
-  background: var(--ink);
+.sheet-action a,
+.sheet-cta {
+  background: #25d366;
   color: #fff;
   border-radius: 14px;
   min-height: 54px;
-  padding: 8px 14px;
+  padding: 8px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   text-decoration: none;
-  box-shadow: 0 7px 20px rgba(34,34,34,0.18);
-  transition: background .2s;
+  box-shadow: 0 7px 22px rgba(37, 211, 102, 0.35);
+  transition: all .2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.sheet-action a:hover {
-  background: #3d3d3d;
+.sheet-action a:hover,
+.sheet-cta:hover {
+  background: #20bd5a;
+  transform: translateY(-1px);
+  box-shadow: 0 9px 26px rgba(37, 211, 102, 0.45);
 }
 
-.sheet-action a > span {
+.sheet-action a > span,
+.sheet-cta > span {
   display: flex;
   flex-direction: column;
 }
 
-.sheet-action strong {
+.sheet-action strong,
+.sheet-cta strong {
   font-size: 11px;
 }
 
-.sheet-action small {
+.sheet-action small,
+.sheet-cta small {
   font-size: 8px;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* FLOATING WHATSAPP */
@@ -1206,19 +1234,21 @@ footer p {
   background: #25d366;
   color: #fff;
   border-radius: 100px;
-  padding: 10px 14px;
+  padding: 10px 16px;
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 10px;
+  font-size: 10.5px;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 6px 18px rgba(37,211,102,0.32);
-  transition: transform .2s;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.38);
+  transition: all .2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .floating-whatsapp:hover {
+  background: #20bd5a;
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.48);
 }
 
 /* ANIMATIONS */
