@@ -11,7 +11,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'html/akami',
+    outDir: 'html',
     emptyOutDir: true,
     assetsDir: 'assets',
     sourcemap: false,
