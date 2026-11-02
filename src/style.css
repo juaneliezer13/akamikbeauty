@@ -530,6 +530,26 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.05);
 }
 
+.product-visual-empty,
+.gallery-empty {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--beige);
+}
+
+.empty-brand-tag {
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0.6;
+}
+
 .view-hint {
   color: #fff;
   -webkit-backdrop-filter: blur(8px);
