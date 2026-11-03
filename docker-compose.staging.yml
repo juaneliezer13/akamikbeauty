@@ -1,18 +1,36 @@
-# 🐳 Docker Compose — Ambiente Staging
-# Akami K-Beauty — Servicio web en puerto 23000
+# 🐳 Docker Compose — Akami K-Beauty (Staging)
+# Servicio expuesto en puerto 23000 con tag :staging
 
 services:
   web_akami:
-    build:
-      context: .
-      dockerfile: Dockerfile
     image: juaneliezer13/akamikbeauty:staging
-    container_name: cliente_akami_staging
+    container_name: cliente_akami
     restart: unless-stopped
     ports:
       - "${PORT:-23000}:80"
     volumes:
-      - ./html:/usr/share/nginx/html:ro
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./uploads:/usr/share/nginx/uploads:ro
     environment:
       - TZ=America/Caracas
+    depends_on:
+      - api_akami
+    networks:
+      - akami_network
+
+  api_akami:
+    image: juaneliezer13/akami-api:staging
+    container_name: api_akami
+    restart: unless-stopped
+    volumes:
+      - ./database:/var/www/database
+      - ./uploads:/var/www/uploads
+    environment:
+      - TZ=America/Caracas
+      - UPLOAD_DIR=/var/www/uploads/products
+      - DB_PATH=/var/www/database/akami.sqlite
+    networks:
+      - akami_network
+
+networks:
+  akami_network:
+    driver: bridge

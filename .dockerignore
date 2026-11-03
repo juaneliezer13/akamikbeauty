@@ -3,3 +3,5 @@ node_modules
 .gitignore
 *.log
 .DS_Store
+html/images/products
+public/images/products

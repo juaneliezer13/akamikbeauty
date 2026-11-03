@@ -1,5 +1,5 @@
-# 🐳 Docker Compose — Akami K-Beauty (Staging / Producción)
-# Servicio expuesto en puerto 23000 (configurable via variable PORT)
+# 🐳 Docker Compose — Akami K-Beauty (SPA + Mini CMS + REST API)
+# Expone la aplicación en el puerto 23000 (configurable via variable PORT)
 
 services:
   web_akami:
@@ -13,6 +13,29 @@ services:
       - "${PORT:-23000}:80"
     volumes:
       - ./html:/usr/share/nginx/html:ro
+      - ../uploads:/usr/share/nginx/uploads:ro
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
     environment:
       - TZ=America/Caracas
+    depends_on:
+      - api_akami
+    networks:
+      - akami_network
+
+  api_akami:
+    image: juaneliezer13/akami-api:latest
+    container_name: api_akami
+    restart: unless-stopped
+    volumes:
+      - ../database:/var/www/database
+      - ../uploads:/var/www/uploads
+    environment:
+      - TZ=America/Caracas
+      - UPLOAD_DIR=/var/www/uploads/products
+      - DB_PATH=/var/www/database/akami.sqlite
+    networks:
+      - akami_network
+
+networks:
+  akami_network:
+    driver: bridge

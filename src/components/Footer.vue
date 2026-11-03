@@ -1,7 +1,11 @@
 <script setup lang="ts">
-import { Instagram } from 'lucide-vue-next';
+import { Instagram, Lock } from 'lucide-vue-next';
 import { generateAdvisorWhatsAppLink } from '../data/products';
 import WhatsAppIcon from './icons/WhatsAppIcon.vue';
+
+const emit = defineEmits<{
+  (e: 'open-admin'): void;
+}>();
 </script>
 
 <template>
@@ -29,6 +33,14 @@ import WhatsAppIcon from './icons/WhatsAppIcon.vue';
       >
         <WhatsAppIcon :size="16" />
       </a>
+      <button
+        @click="emit('open-admin')"
+        class="footer-social text-ink-light/50 hover:text-ink hover:bg-blush transition-colors"
+        aria-label="Acceso Administrativo"
+        title="Acceso CMS Administrador"
+      >
+        <Lock :size="14" />
+      </button>
     </div>
   </footer>
 </template>
