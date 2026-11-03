@@ -45,6 +45,7 @@ export const BRANDS = [
 ] as const;
 
 export const PRODUCTS: Product[] = [
+
   {
     id: 1,
     brand: "ANUA",
@@ -53,8 +54,8 @@ export const PRODUCTS: Product[] = [
     skinTypes: ["Piel Grasa/Mixta", "Tendencia al Acné"],
     compatibility: "Limpieza profunda de poros con Heartleaf y BHA",
     price: 28.7,
-    image: "",
-    gallery: [],
+    image: "./images/products/anua-foam-cleanser-anua.jpg",
+    gallery: ["./images/products/anua-foam-cleanser-anua.jpg"],
     attributes: ["Heartleaf 33%", "Polvo de Houttuynia", "BHA Suave"],
     ingredients: "Extracto de hoja de corazón (Heartleaf) al 33%, quercetinol patentado, ácido salicílico (BHA) y ácido hialurónico.",
     benefits: "Espuma limpiadora densa y cremosa que elimina impurezas profundas y exceso de sebo sin resecar ni alterar la barrera cutánea.",
@@ -68,8 +69,8 @@ export const PRODUCTS: Product[] = [
     skinTypes: ["Piel Grasa/Mixta", "Tendencia al Acné"],
     compatibility: "Paso 1 de doble limpieza para puntos negros y sebo",
     price: 39.7,
-    image: "",
-    gallery: [],
+    image: "./images/products/anua-cleansing-oil-anua.jpg",
+    gallery: ["./images/products/anua-cleansing-oil-anua.jpg"],
     attributes: ["Heartleaf Extract", "No Comedogénico", "Desmaquillante Suave"],
     ingredients: "Aceite de hoja de corazón (Heartleaf), aceite de semilla de jojoba, aceite de oliva, aceite de semilla de uva y vitamina E.",
     benefits: "Aceite limpiador no comedogénico viral de Corea que disuelve el maquillaje resistente, protector solar y puntos negros sin irritar los ojos.",
@@ -83,8 +84,8 @@ export const PRODUCTS: Product[] = [
     skinTypes: ["Piel Sensible/Rojeces", "Tendencia al Acné", "Piel Grasa/Mixta"],
     compatibility: "Tónico calmante viral N°1 en Corea para rojeces y acné",
     price: 41.18,
-    image: "",
-    gallery: [],
+    image: "./images/products/anua-toner-77-anua.jpg",
+    gallery: ["./images/products/anua-toner-77-anua.jpg"],
     attributes: ["Heartleaf 77%", "Calmante Inmediato", "pH 5.5 Equilibrado"],
     ingredients: "Extracto de Houttuynia Cordata (Heartleaf) al 77%, extracto de centella asiática, manzanilla, portulaca oleracea y pantenol.",
     benefits: "El tónico más premiado de Corea formulado con 77% de extracto botánico para desinflamar brotes activos, calmar rojeces al instante y regular el sebo.",
@@ -98,8 +99,8 @@ export const PRODUCTS: Product[] = [
     skinTypes: ["Tendencia al Acné", "Antimanchas", "Piel Grasa/Mixta"],
     compatibility: "Tratamiento específico para brotes, textura y manchas post-acné",
     price: 44.12,
-    image: "",
-    gallery: [],
+    image: "./images/products/anua-azelaic-acid-anua.jpg",
+    gallery: ["./images/products/anua-azelaic-acid-anua.jpg"],
     attributes: ["Ácido Azelaico 10%", "Ácido Hialurónico", "Anti-Rojeces"],
     ingredients: "Ácido azelaico purificado al 10%, niacinamida, ácido hialurónico triple y extracto de centella asiática.",
     benefits: "Tratamiento concentrado que descongestiona poros, atenúa marcas oscuras y reduce la inflamación y rojez persistente.",
@@ -113,8 +114,8 @@ export const PRODUCTS: Product[] = [
     skinTypes: ["Antimanchas", "Piel Grasa/Mixta"],
     compatibility: "Sérum corrector intensivo para manchas oscuras y tono irregular",
     price: 38.6,
-    image: "",
-    gallery: [],
+    image: "./images/products/anua-niacinamida-anua.jpg",
+    gallery: ["./images/products/anua-niacinamida-anua.jpg"],
     attributes: ["Niacinamida 10%", "Ácido Tranexámico 4%", "Arbutina 2%"],
     ingredients: "Niacinamida al 10%, ácido tranexámico al 4%, alfa-arbutina al 2% y ceramidas biocompatibles.",
     benefits: "Fórmula despigmentante triple acción que inhibe la melanina, desvanece manchas solares y marcas de acné aportando luminosidad cristalina.",
@@ -1289,7 +1290,7 @@ export const PRODUCTS: Product[] = [
     ingredients: "Phyto-PDRN extraído de ginseng silvestre coreano, ceramidas y péptidos.",
     benefits: "Cápsulas selladas que mantienen la pureza de los activos bioidénticos para devolver la densidad, firmeza y tersura a la piel madura o apagada.",
     use: "Gira la punta de la cápsula y aplica todo su contenido por la noche en rostro y cuello."
-  }
+  },
 ];
 
 export const WHATSAPP_PHONE = '584149025118';
