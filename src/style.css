@@ -288,10 +288,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* CATALOG HERO BANNER */
 .catalog-hero {
-  height: 290px;
+  height: 310px;
   position: relative;
   overflow: hidden;
-  background: var(--beige);
+  background: #17241d;
 }
 
 .catalog-hero-picture,
@@ -320,57 +320,66 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.catalog-hero:after {
-  content: "";
-  background: linear-gradient(180deg, rgba(34,34,34,0.12) 0%, rgba(34,34,34,0.85) 100%);
+.catalog-hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 22, 17, 0.42) 0%,
+    rgba(14, 22, 17, 0.16) 45%,
+    rgba(14, 22, 17, 0.76) 100%
+  );
+  pointer-events: none;
+}
+
+.catalog-hero-brand {
+  position: absolute;
+  top: 20px;
+  right: 18px;
+  width: 110px;
+  max-width: 32vw;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.catalog-hero-brand-logo {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.45));
 }
 
 .catalog-hero-copy {
-  z-index: 2;
-  max-width: 420px;
   position: absolute;
-  bottom: 24px;
+  bottom: 22px;
   left: 18px;
   right: 18px;
+  z-index: 2;
+  pointer-events: none;
   color: #fff;
 }
 
-.catalog-hero-copy > span {
-  letter-spacing: 1.4px;
-  gap: 6px;
-  font-size: 8px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  margin-bottom: 6px;
-  opacity: .95;
-  text-transform: uppercase;
-}
-
-.catalog-hero h1 {
-  letter-spacing: var(--title-hero-letter-spacing);
+.catalog-hero-copy h1 {
   font-family: var(--font-titles);
-  font-size: 38px;
-  font-weight: var(--title-weight-hero);
-  line-height: var(--title-line-height-hero);
-  color: #fff;
-  margin: 0 0 6px 0;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.catalog-hero h1 em {
-  font-style: normal;
-  font-weight: 500;
-  opacity: .95;
-}
-
-.catalog-hero p {
-  opacity: .92;
-  font-size: 10px;
+.catalog-hero-copy p {
+  font-family: var(--font-brand);
+  font-size: 12px;
+  font-weight: 400;
   line-height: 1.45;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.95);
   margin: 0;
+  max-width: 380px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
 }
 
 /* DISCOVERY SECTION */
@@ -1276,17 +1285,36 @@ footer p {
     font-size: 12px;
   }
   .catalog-hero {
-    height: 340px;
+    height: 360px;
+  }
+  .catalog-hero-overlay {
+    background:
+      linear-gradient(90deg, rgba(14, 22, 17, 0.58) 0%, rgba(14, 22, 17, 0.24) 48%, rgba(14, 22, 17, 0.08) 82%),
+      linear-gradient(180deg, rgba(14, 22, 17, 0.45) 0%, rgba(14, 22, 17, 0.1) 45%, rgba(14, 22, 17, 0.72) 100%);
+  }
+  .catalog-hero-brand {
+    top: 36px;
+    right: 7vw;
+    width: 165px;
+    max-width: none;
   }
   .catalog-hero-copy {
-    max-width: 500px;
+    bottom: 36px;
     left: 7vw;
+    right: auto;
+    max-width: 500px;
+    margin-top: 0;
   }
-  .catalog-hero h1 {
-    font-size: 53px;
+  .catalog-hero-copy h1 {
+    font-size: 42px;
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    margin-bottom: 10px;
   }
-  .catalog-hero p {
-    font-size: 12px;
+  .catalog-hero-copy p {
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 440px;
   }
   .discovery {
     padding-left: 5vw;
@@ -1322,8 +1350,16 @@ footer p {
 }
 
 @media (width >= 1080px) {
+  .catalog-hero-brand {
+    right: max(8vw, 50vw - 590px);
+    width: 180px;
+  }
   .catalog-hero-copy {
     left: max(8vw, 50vw - 590px);
+    max-width: 540px;
+  }
+  .catalog-hero-copy h1 {
+    font-size: 44px;
   }
   .catalog-section {
     padding-left: 24px;
