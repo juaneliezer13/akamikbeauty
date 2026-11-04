@@ -125,10 +125,11 @@ function toggleAccordion(section: 'benefits' | 'ingredients' | 'use') {
           target="_blank"
           rel="noopener noreferrer"
           class="sheet-cta"
+          :title="`Comprar ${product.title} por WhatsApp`"
         >
           <WhatsAppIcon :size="20" />
           <span>
-            <strong>Consultar disponibilidad en WhatsApp</strong>
+            <strong>Comprar por WhatsApp</strong>
             <small>Respuesta rápida y asesoría directa</small>
           </span>
         </a>
