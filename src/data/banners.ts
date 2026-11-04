@@ -54,15 +54,15 @@ export const CATEGORY_BANNERS: Record<string, BannerInfo> = {
     kicker: 'ZONAS DELICADAS',
     title: 'Cuidado específico y reafirmante.',
     subtitle: 'Fórmulas suaves para el contorno de ojos y nutrición labial.',
-    desktop: './images/banners/serums-desktop.webp',
-    mobile: './images/banners/serums-mobile.webp',
+    desktop: './images/banners/ojos-labios-desktop.webp',
+    mobile: './images/banners/ojos-labios-mobile.webp',
   },
   'Dispositivos & Sets': {
     kicker: 'KITS & HERRAMIENTAS',
     title: 'Tu rutina completa y organizada.',
     subtitle: 'Sets de viaje y herramientas para potenciar tus resultados.',
-    desktop: './images/banners/todos-desktop.webp',
-    mobile: './images/banners/todos-mobile.webp',
+    desktop: './images/banners/dispositivos-sets-desktop.webp',
+    mobile: './images/banners/dispositivos-sets-mobile.webp',
   },
 };
 
@@ -106,7 +106,7 @@ export const SKIN_BANNERS: Record<string, BannerInfo> = {
     kicker: 'TONO UNIFORME & GLOW',
     title: 'Ilumina y reduce manchas.',
     subtitle: 'Vitamina C, niacinamida y arroz para una piel pareja y radiante.',
-    desktop: './images/banners/serums-desktop.webp',
-    mobile: './images/banners/serums-mobile.webp',
+    desktop: './images/banners/antimanchas-desktop.webp',
+    mobile: './images/banners/antimanchas-mobile.webp',
   },
 };
