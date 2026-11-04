@@ -1,69 +1,64 @@
-# 🚀 Guía de Despliegue en AWS desde Cero — Akami K-Beauty v1.3.0
+# 🚀 Guía de Despliegue y Migración en AWS EC2 — Akami K-Beauty
 
-Esta guía explica paso a paso cómo desplegar la plataforma **Akami K-Beauty** (SPA + Mini CMS + API RESTful PHP + Almacenamiento dinámico de imágenes) en un servidor **AWS EC2** partiendo de una carpeta `akami` completamente vacía.
-
----
-
-## 📋 Requisitos Previos en AWS
-
-1. **Instancia EC2** (Ubuntu, Debian o Amazon Linux) con **Docker** y **Docker Compose** instalados.
-2. **Grupo de Seguridad (Security Group) en AWS EC2**:
-   - Asegúrate de tener una regla de entrada (**Inbound Rule**) que permita el tráfico en el puerto **`23000`**:
-     * **Tipo:** Custom TCP
-     * **Puerto:** `23000`
-     * **Origen:** `0.0.0.0/0` (o restringido a tu IP / proxy inverso como Nginx / Cloudflare).
+Esta guía contiene las instrucciones detalladas para desplegar y migrar **Akami K-Beauty** en un servidor **AWS EC2** con la nueva arquitectura desacoplada:
+* **Frontend (Web SPA / Nginx):** Puerto **`16001`**
+* **Backend (API RESTful PHP 8.2 + SQLite):** Puerto **`15001`**
 
 ---
 
-## 🛠️ Pasos de Despliegue
+## 📋 1. Configuración del Grupo de Seguridad (AWS Security Group)
 
-### Paso 1: Conectarte por SSH y entrar a la carpeta
+Antes de levantar los contenedores con los nuevos puertos en AWS, debes autorizar el tráfico en la consola de AWS EC2:
 
-Conéctate a tu servidor AWS y accede a la carpeta `akami`:
+1. Ve a **AWS EC2 Console** > **Instances** > Selecciona tu instancia.
+2. En la pestaña **Security**, haz clic sobre el **Security Group** asociado.
+3. Haz clic en **Edit inbound rules** y agrega las siguientes reglas:
 
+| Tipo | Protocolo | Rango de Puertos | Origen (Source) | Descripción |
+|---|---|---|---|---|
+| **Custom TCP** | TCP | `16001` | `0.0.0.0/0` (o tu IP / CDN) | Akami Frontend Web SPA |
+| **Custom TCP** | TCP | `15001` | `0.0.0.0/0` (o red interna) | Akami Backend RESTful API |
+
+*(Si ya no vas a usar el puerto `23000` de forma directa, puedes eliminar su regla después de verificar la migración).*
+
+---
+
+## 🔄 2. Procedimiento de Migración en Servidor Activo (Cero Pérdida de Datos)
+
+Sigue estos pasos en el servidor para migrar desde la versión anterior (puerto 23000) a los nuevos puertos (`16001` y `15001`) manteniendo intacta la base de datos (`akami.sqlite`) y las imágenes (`uploads/`):
+
+### Paso 2.1: Conectarte por SSH a la instancia EC2
 ```bash
-ssh -i tu-clave.pem usuario@tu-ip-aws
+ssh -i tu-clave.pem ubuntu@<IP-PUBLICA-AWS>
 cd ~/akami
 ```
 
-*(Puedes verificar que la carpeta esté vacía ejecutando `ls -la`)*.
-
----
-
-### Paso 2: Crear el archivo `docker-compose.yml`
-
-Descarga el archivo de configuración oficial directamente desde GitHub:
-
+### Paso 2.2: Crear un respaldo de seguridad preventivo
+Antes de realizar cualquier cambio, respalda la base de datos activa:
 ```bash
-curl -sO https://raw.githubusercontent.com/juaneliezer13/akamikbeauty/main/docker-compose.server.yml && mv docker-compose.server.yml docker-compose.yml
+cp database/akami.sqlite database/backup_pre_migracion_$(date +%F_%H%M%S).sqlite
 ```
 
-*(Si prefieres crearlo manualmente, su contenido es)*:
+### Paso 2.3: Detener los contenedores anteriores
+```bash
+docker compose down
+```
+> **Nota de seguridad:** El comando `docker compose down` únicamente apaga y retira los contenedores. Los volúmenes montados en disco (`database/` y `uploads/`) **no se eliminan ni se modifican**.
+
+### Paso 2.4: Actualizar el archivo `docker-compose.yml`
+Actualiza el `docker-compose.yml` del servidor con la nueva configuración de puertos y red unificada:
 
 ```yaml
-# 🐳 Docker Compose para Servidor AWS (Producción)
-# Akami K-Beauty — SPA + Mini CMS + REST API en puerto 23000
+# 🐳 Docker Compose — Akami K-Beauty (Servidor AWS / Producción)
+# Frontend: 16001 | Backend: 15001
 
 services:
-  web_akami:
-    image: juaneliezer13/akamikbeauty:latest
-    container_name: cliente_akami
-    restart: unless-stopped
-    ports:
-      - "${PORT:-23000}:80"
-    volumes:
-      - ./uploads:/usr/share/nginx/uploads:ro
-    environment:
-      - TZ=America/Caracas
-    depends_on:
-      - api_akami
-    networks:
-      - akami_network
-
   api_akami:
     image: juaneliezer13/akami-api:latest
     container_name: api_akami
     restart: unless-stopped
+    ports:
+      - "${BACK_PORT:-15001}:8000"
     volumes:
       - ./database:/var/www/database
       - ./uploads:/var/www/uploads
@@ -74,109 +69,159 @@ services:
     networks:
       - akami_network
 
+  web_akami:
+    image: juaneliezer13/akamikbeauty:latest
+    container_name: cliente_akami
+    restart: unless-stopped
+    ports:
+      - "${FRONT_PORT:-16001}:80"
+    volumes:
+      - ./uploads:/usr/share/nginx/uploads:ro
+    environment:
+      - TZ=America/Caracas
+    depends_on:
+      - api_akami
+    networks:
+      - akami_network
+
 networks:
   akami_network:
+    name: akami_network
     driver: bridge
 ```
 
----
-
-### Paso 3: Descargar el paquete inicial de imágenes de productos
-
-Las imágenes de los productos están desacopladas de la imagen Docker para permitir actualizaciones en caliente y subida dinámica desde el CMS. 
-
-Descarga y descomprime las 61 imágenes oficiales iniciales con un solo comando:
-
+### Paso 2.5: Iniciar el stack actualizado
 ```bash
-curl -sL https://github.com/juaneliezer13/akamikbeauty/releases/download/v1.3.0/uploads.tar.gz | tar -xz
-```
-
-> **Verificación:** Ejecuta `ls uploads/products/` para confirmar que se encuentran las 61 imágenes (.jpg).
-
----
-
-### Paso 4: Crear la carpeta de base de datos y asignar permisos
-
-Crea el directorio donde residirá la base de datos persistente SQLite (`akami.sqlite`) y asigna permisos de escritura:
-
-```bash
-mkdir -p database
-chmod -R 777 database uploads
-```
-
----
-
-### Paso 5: Descargar las imágenes de Docker Hub e iniciar el stack
-
-Descarga las últimas imágenes oficiales y levanta los contenedores en segundo plano:
-
-```bash
-# Descargar las últimas imágenes oficiales (incluyendo el catálogo embebido)
+# Descargar las últimas versiones oficiales si aplica
 docker compose pull
 
-# Iniciar los servicios (web_akami y api_akami)
+# Iniciar los servicios en segundo plano
 docker compose up -d
+```
 
-# Ejecutar la siembra inicial de la base de datos (83 productos y 19 marcas)
+### Paso 2.6: Comprobar el estado y verificar los datos
+```bash
+# 1. Comprobar que ambos contenedores estén 'Up' en sus nuevos puertos
+docker compose ps
+
+# 2. Verificar respuesta directa del Backend (puerto 15001)
+curl -s http://localhost:15001/api/health
+
+# 3. Verificar proxy inverso de Nginx a través del Frontend (puerto 16001)
+curl -s http://localhost:16001/api/health
+
+# 4. Verificar que los 83 productos se mantienen intactos en la base de datos
+curl -s http://localhost:16001/api/products | grep -o '"id":' | wc -l
+```
+*Respuesta esperada:* Conteo de productos: **`83`**.
+
+---
+
+## 🔀 3. Actualizar el Proxy Inverso del Host (Dominio / Nginx del Servidor)
+
+Si en el servidor AWS tienes configurado un Nginx principal (o Cloudflare / Caddy) para resolver el dominio `akami.batdev.lat`, actualiza el bloque de configuración correspondiente:
+
+1. Edita el archivo de configuración en el host (comúnmente `/etc/nginx/sites-available/akami.batdev.lat` o similar):
+```nginx
+server {
+    server_name akami.batdev.lat;
+
+    location / {
+        # Cambiar el puerto anterior 23000 por el nuevo 16001
+        proxy_pass http://127.0.0.1:16001;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
+
+2. Valida y recarga Nginx en el host:
+```bash
+sudo nginx -t && sudo systemctl reload nginx
+```
+
+---
+
+## 📦 4. Despliegue de Proyectos de Forma Separada / Individual
+
+Si en el servidor decides clonar los repositorios por separado para operarlos de forma totalmente independiente:
+
+### A) Microservicio Backend (`akami-api`)
+```bash
+cd ~/akami/akami-api
+docker compose up -d
+```
+* **Puerto host:** `15001`
+* **Healthcheck:** `curl -s http://localhost:15001/api/health`
+* **Persistencia:** Mapea automáticamente la base de datos y uploads correspondientes.
+
+### B) Frontend SPA (`akami-web`)
+```bash
+cd ~/akami/akami-web
+docker compose up -d
+```
+* **Puerto host:** `16001`
+* **Healthcheck:** `curl -s http://localhost:16001/`
+
+---
+
+## 🆕 5. Despliegue Limpio desde Cero (Nueva Máquina AWS)
+
+Si alguna vez despliegas en una instancia EC2 completamente nueva:
+
+```bash
+# 1. Crear directorio del proyecto
+mkdir -p ~/akami && cd ~/akami
+
+# 2. Descargar o crear el docker-compose.yml con los puertos 16001 y 15001
+# (usando el contenido del Paso 2.4)
+
+# 3. Descargar el paquete de imágenes de productos desacopladas
+curl -sL https://github.com/juaneliezer13/akamikbeauty/releases/download/v1.3.0/uploads.tar.gz | tar -xz
+
+# 4. Crear carpeta de persistencia y permisos
+mkdir -p database
+chmod -R 777 database uploads
+
+# 5. Iniciar contenedores
+docker compose pull && docker compose up -d
+
+# 6. Siembra inicial de catálogo oficial (solo necesario la primera vez que se crea la BD)
 docker exec api_akami php bin/seed.php
 ```
 
-> **Nota:** Al ejecutar `docker exec api_akami php bin/seed.php`, el microservicio poblará automáticamente `database/akami.sqlite` con los **83 productos**, **19 marcas** y **8 categorías oficiales** para que aparezcan de inmediato en el panel administrativo.
-
 ---
 
-### Paso 6: Verificar el despliegue
+## 🌐 URLs y Credenciales
 
-Comprueba que los contenedores y los servicios estén respondiendo correctamente:
-
-```bash
-# 1. Comprobar que ambos contenedores estén en estado 'Up'
-docker compose ps
-
-# 2. Comprobar salud de la API RESTful
-curl -s http://localhost:23000/api/health
-
-# 3. Comprobar que los 83 productos están disponibles
-curl -s http://localhost:23000/api/products | grep -o '"id":' | wc -l
-```
-
-*Respuestas esperadas:*
-- `{"status":"ok","service":"Akami K-Beauty REST API","version":"1.0.0"}`
-- Conteo de productos: `83`
-
----
-
-### Paso 7: Acceder desde el Navegador
-
-| Módulo | URL |
+| Componente | URL de Acceso |
 |---|---|
-| **Catálogo Público** | `http://<IP-PUBLICA-AWS>:23000/` *(o `https://akami.batdev.lat/`)* |
-| **Mini CMS (Panel Admin)** | `http://<IP-PUBLICA-AWS>:23000/#admin` |
+| **Catálogo Público** | `http://<IP-PUBLICA-AWS>:16001/` *(o `https://akami.batdev.lat/`)* |
+| **Panel Mini CMS** | `http://<IP-PUBLICA-AWS>:16001/#admin` |
+| **Backend RESTful API** | `http://<IP-PUBLICA-AWS>:15001/api/` |
 
-#### Credenciales de Administrador:
-- **Usuario:** `akami`
-- **Contraseña:** `akami2026`
+#### Credenciales Administrativas:
+* **Usuario:** `akami`
+* **Contraseña:** `akami2026`
 
 ---
 
-## 🔧 Comandos Útiles de Mantenimiento
+## 🆘 Procedimiento de Rollback de Emergencia
 
+En caso de cualquier imprevisto en el servidor durante la migración:
 ```bash
-# Ver registros en tiempo real de todos los servicios
-docker compose logs -f
-
-# Ver registros específicos del backend PHP
-docker compose logs -f api_akami
-
-# Respaldar la base de datos con marca de tiempo
-cp database/akami.sqlite database/backup_$(date +%F_%H%M%S).sqlite
-
-# Reiniciar los servicios
-docker compose restart
-
-# Detener los servicios
+# 1. Detener el nuevo stack
 docker compose down
 
-# Actualizar a una nueva versión futura de imágenes
-docker compose pull && docker compose up -d
+# 2. Restaurar la base de datos desde el respaldo previo
+cp database/backup_pre_migracion_*.sqlite database/akami.sqlite
+
+# 3. Restaurar los puertos anteriores (23000) o reiniciar contenedores
+docker compose up -d
 ```
