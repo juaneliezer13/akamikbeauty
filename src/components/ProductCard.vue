@@ -50,10 +50,10 @@ const emit = defineEmits<{
           target="_blank"
           rel="noopener noreferrer"
           class="card-cta"
-          :title="`Consultar ${product.title} por WhatsApp`"
+          :title="`Comprar ${product.title} por WhatsApp`"
         >
           <WhatsAppIcon :size="13" />
-          <span>Consultar</span>
+          <span>Comprar</span>
         </a>
       </div>
     </div>
