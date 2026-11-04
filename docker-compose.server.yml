@@ -1,5 +1,5 @@
-# 🐳 Docker Compose para Servidor AWS / VPS (Producción)
-# Akami K-Beauty — SPA + Mini CMS + REST API en puerto 23000
+# 🐳 Docker Compose — Akami Web (Servidor AWS / Producción)
+# Frontend SPA Nginx en puerto 16001
 
 services:
   web_akami:
@@ -7,30 +7,15 @@ services:
     container_name: cliente_akami
     restart: unless-stopped
     ports:
-      - "${PORT:-23000}:80"
+      - "${FRONT_PORT:-16001}:80"
     volumes:
-      - ./uploads:/usr/share/nginx/uploads:ro
+      - ${UPLOADS_DIR:-./uploads}:/usr/share/nginx/uploads:ro
     environment:
       - TZ=America/Caracas
-    depends_on:
-      - api_akami
-    networks:
-      - akami_network
-
-  api_akami:
-    image: juaneliezer13/akami-api:latest
-    container_name: api_akami
-    restart: unless-stopped
-    volumes:
-      - ./database:/var/www/database
-      - ./uploads:/var/www/uploads
-    environment:
-      - TZ=America/Caracas
-      - UPLOAD_DIR=/var/www/uploads/products
-      - DB_PATH=/var/www/database/akami.sqlite
     networks:
       - akami_network
 
 networks:
   akami_network:
+    name: akami_network
     driver: bridge
