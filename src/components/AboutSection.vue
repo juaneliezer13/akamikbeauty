@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue';
 import { ArrowRight, Sparkles, ShieldCheck, Heart } from 'lucide-vue-next';
 
 defineEmits<{
@@ -6,10 +7,46 @@ defineEmits<{
 }>();
 
 const video1Src = './videos/ritual-skincare.mp4';
-const video1Poster = './videos/ritual-skincare-poster.webp';
+const video1Poster = './videos/ritual-skincare-poster.jpg';
 
 const video2Src = './videos/glass-skin.mp4';
-const video2Poster = './videos/glass-skin-poster.webp';
+const video2Poster = './videos/glass-skin-poster.jpg';
+
+const video1Ref = ref<HTMLVideoElement | null>(null);
+const video2Ref = ref<HTMLVideoElement | null>(null);
+
+function setupVideoAutoplay(videoEl: HTMLVideoElement | null) {
+  if (!videoEl) return;
+  videoEl.muted = true;
+  videoEl.defaultMuted = true;
+  videoEl.setAttribute('muted', '');
+  videoEl.setAttribute('playsinline', '');
+  videoEl.setAttribute('webkit-playsinline', '');
+
+  const startPlayback = () => {
+    videoEl.play().catch(() => {});
+  };
+
+  // Intentar reproducir inmediatamente
+  startPlayback();
+
+  // Si el navegador requiriera interacción del usuario
+  const onUserInteraction = () => {
+    startPlayback();
+    window.removeEventListener('click', onUserInteraction);
+    window.removeEventListener('scroll', onUserInteraction);
+    window.removeEventListener('touchstart', onUserInteraction);
+  };
+
+  window.addEventListener('click', onUserInteraction, { once: true, passive: true });
+  window.addEventListener('scroll', onUserInteraction, { once: true, passive: true });
+  window.addEventListener('touchstart', onUserInteraction, { once: true, passive: true });
+}
+
+onMounted(() => {
+  setupVideoAutoplay(video1Ref.value);
+  setupVideoAutoplay(video2Ref.value);
+});
 </script>
 
 <template>
@@ -62,15 +99,18 @@ const video2Poster = './videos/glass-skin-poster.webp';
             <div class="about-video-card">
               <div class="about-video-wrapper">
                 <video
-                  :src="video1Src"
+                  ref="video1Ref"
                   :poster="video1Poster"
                   autoplay
                   loop
                   muted
                   playsinline
+                  webkit-playsinline
                   preload="auto"
                   class="about-video"
-                ></video>
+                >
+                  <source :src="video1Src" type="video/mp4" />
+                </video>
                 <!-- Efecto Fade-out y viñeta moderna -->
                 <div class="about-video-fade" aria-hidden="true"></div>
                 <!-- Badge flotante moderno -->
@@ -144,15 +184,18 @@ const video2Poster = './videos/glass-skin-poster.webp';
             <div class="about-video-card">
               <div class="about-video-wrapper">
                 <video
-                  :src="video2Src"
+                  ref="video2Ref"
                   :poster="video2Poster"
                   autoplay
                   loop
                   muted
                   playsinline
+                  webkit-playsinline
                   preload="auto"
                   class="about-video"
-                ></video>
+                >
+                  <source :src="video2Src" type="video/mp4" />
+                </video>
                 <!-- Efecto Fade-out y viñeta moderna -->
                 <div class="about-video-fade" aria-hidden="true"></div>
                 <!-- Badge flotante moderno -->
