@@ -24,6 +24,14 @@ watch(() => props.product, () => {
 function toggleAccordion(section: 'benefits' | 'ingredients' | 'use') {
   openAccordion.value = openAccordion.value === section ? '' : section;
 }
+
+function resolveImageUrl(img?: string): string {
+  if (!img) return '';
+  if (img.startsWith('http://') || img.startsWith('https://')) return img;
+  if (img.startsWith('/uploads/')) return img;
+  if (img.startsWith('./')) return img;
+  return `/uploads/products/${img}`;
+}
 </script>
 
 <template>
@@ -47,7 +55,7 @@ function toggleAccordion(section: 'benefits' | 'ingredients' | 'use') {
         <div class="gallery">
           <img
             v-if="product.image"
-            :src="product.gallery?.[galleryIndex] || product.image"
+            :src="resolveImageUrl(product.gallery?.[galleryIndex] || product.image)"
             :alt="product.title"
           />
           <div v-else class="gallery-empty">

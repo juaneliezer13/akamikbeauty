@@ -149,6 +149,18 @@ function handleFileSelect(e: Event) {
   }
 }
 
+function handleFileDrop(e: DragEvent) {
+  if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) {
+    const file = e.dataTransfer.files[0];
+    if (file.type.startsWith('image/')) {
+      selectedImageFile.value = file;
+      imagePreviewUrl.value = URL.createObjectURL(file);
+    } else {
+      alert('Por favor selecciona un archivo de imagen válido (JPG, PNG o WebP).');
+    }
+  }
+}
+
 async function handleSaveProduct() {
   if (!formData.value.title.trim()) {
     alert('El nombre del producto es obligatorio.');
@@ -556,10 +568,15 @@ function showFlash(msg: string) {
 
               <!-- Upload Area -->
               <div class="flex-1">
-                <label class="flex flex-col items-center justify-center p-4 border-2 border-dashed border-blush hover:border-ink rounded-xl cursor-pointer bg-ivory/20 hover:bg-ivory/40 transition-colors">
+                <label
+                  @dragover.prevent
+                  @dragenter.prevent
+                  @drop.prevent="handleFileDrop"
+                  class="flex flex-col items-center justify-center p-4 border-2 border-dashed border-blush hover:border-ink rounded-xl cursor-pointer bg-ivory/20 hover:bg-ivory/40 transition-colors"
+                >
                   <UploadCloud :size="24" class="text-ink-light mb-1" />
                   <span class="text-xs font-medium text-ink">Seleccionar o arrastrar imagen</span>
-                  <span class="text-[11px] text-ink-light/70">JPG, PNG o WebP (máx. 5MB)</span>
+                  <span class="text-[11px] text-ink-light/70">JPG, PNG o WebP (máx. 25MB)</span>
                   <input
                     type="file"
                     accept="image/jpeg,image/png,image/webp"
