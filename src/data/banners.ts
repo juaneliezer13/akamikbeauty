@@ -1,6 +1,22 @@
 import type { BannerInfo } from '../types';
 
-const V = '?v=1.5.1';
+const V = '?v=1.6.0';
+
+export const QUIENES_SOMOS_BANNER: BannerInfo = {
+  kicker: '',
+  title: 'Quiénes somos',
+  subtitle: 'Rituales de belleza auténticos, efectivos y de calidad.',
+  desktop: `./images/banners/quienes-somos-desktop.webp${V}`,
+  mobile: `./images/banners/quienes-somos-mobile.webp${V}`,
+};
+
+export const VALOR_MARCA_BANNER: BannerInfo = {
+  kicker: '',
+  title: 'Valor de marca',
+  subtitle: 'Sabiduría, virtud y salud en cada ritual de cuidado.',
+  desktop: `./images/banners/valor-marca-desktop.webp${V}`,
+  mobile: `./images/banners/valor-marca-mobile.webp${V}`,
+};
 
 export const CATEGORY_BANNERS: Record<string, BannerInfo> = {
   Todos: {
