@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { ArrowRight, Sparkles, ShieldCheck, Heart } from 'lucide-vue-next';
+import { ArrowRight, Sparkles, ShieldCheck } from 'lucide-vue-next';
 
 defineEmits<{
   (e: 'goToCatalog'): void;
@@ -27,10 +27,8 @@ function setupVideoAutoplay(videoEl: HTMLVideoElement | null) {
     videoEl.play().catch(() => {});
   };
 
-  // Intentar reproducir inmediatamente
   startPlayback();
 
-  // Si el navegador requiriera interacción del usuario
   const onUserInteraction = () => {
     startPlayback();
     window.removeEventListener('click', onUserInteraction);
@@ -113,11 +111,6 @@ onMounted(() => {
                 </video>
                 <!-- Efecto Fade-out y viñeta moderna -->
                 <div class="about-video-fade" aria-hidden="true"></div>
-                <!-- Badge flotante moderno -->
-                <div class="about-video-badge">
-                  <Sparkles :size="14" class="text-amber-300" />
-                  <span>Ritual Consciente • Fórmulas Puras</span>
-                </div>
               </div>
             </div>
           </div>
@@ -198,11 +191,6 @@ onMounted(() => {
                 </video>
                 <!-- Efecto Fade-out y viñeta moderna -->
                 <div class="about-video-fade" aria-hidden="true"></div>
-                <!-- Badge flotante moderno -->
-                <div class="about-video-badge">
-                  <Heart :size="14" class="text-rose-300" />
-                  <span>Glass Skin • Belleza Auténtica</span>
-                </div>
               </div>
             </div>
           </div>
