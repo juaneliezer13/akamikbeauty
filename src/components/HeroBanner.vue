@@ -32,7 +32,7 @@ defineProps<{
 
     <div class="catalog-hero-copy">
       <h1>{{ banner.title }}</h1>
-      <p>{{ banner.subtitle }}</p>
+      <p v-if="banner.subtitle">{{ banner.subtitle }}</p>
     </div>
   </section>
 </template>

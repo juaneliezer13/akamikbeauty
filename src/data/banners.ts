@@ -5,7 +5,7 @@ const V = '?v=1.6.0';
 export const QUIENES_SOMOS_BANNER: BannerInfo = {
   kicker: '',
   title: 'Quiénes somos',
-  subtitle: 'Rituales de belleza auténticos, efectivos y de calidad.',
+  subtitle: '',
   desktop: `./images/banners/quienes-somos-desktop.webp${V}`,
   mobile: `./images/banners/quienes-somos-mobile.webp${V}`,
 };
@@ -13,15 +13,15 @@ export const QUIENES_SOMOS_BANNER: BannerInfo = {
 export const VALOR_MARCA_BANNER: BannerInfo = {
   kicker: '',
   title: 'Valor de marca',
-  subtitle: 'Sabiduría, virtud y salud en cada ritual de cuidado.',
+  subtitle: '',
   desktop: `./images/banners/valor-marca-desktop.webp${V}`,
   mobile: `./images/banners/valor-marca-mobile.webp${V}`,
 };
 
 export const CONTACTO_BANNER: BannerInfo = {
   kicker: '',
-  title: 'Contáctanos',
-  subtitle: 'Estamos aquí para acompañar y guiar tu ritual de belleza consciente.',
+  title: 'Contacto',
+  subtitle: '',
   desktop: `./images/banners/contacto-desktop.webp${V}`,
   mobile: `./images/banners/contacto-mobile.webp${V}`,
 };
