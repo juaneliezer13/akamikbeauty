@@ -3,12 +3,13 @@ import { ref, computed, watch, onMounted } from 'vue';
 import { Sparkles } from 'lucide-vue-next';
 
 import { PRODUCTS, CATEGORIES, SKIN_TYPES } from './data/products';
-import { CATEGORY_BANNERS, SKIN_BANNERS } from './data/banners';
+import { CATEGORY_BANNERS, SKIN_BANNERS, QUIENES_SOMOS_BANNER } from './data/banners';
 import type { Product, BannerInfo } from './types';
 import { api, type AuthUser } from './services/api';
 
 import Navbar from './components/Navbar.vue';
 import HeroBanner from './components/HeroBanner.vue';
+import AboutSection from './components/AboutSection.vue';
 import FilterSection from './components/FilterSection.vue';
 import ProductCard from './components/ProductCard.vue';
 import ProductDetailModal from './components/ProductDetailModal.vue';
@@ -22,7 +23,7 @@ import AdminLayout from './components/admin/AdminLayout.vue';
 import AdminLoginModal from './components/admin/AdminLoginModal.vue';
 
 // Estado de Navegación y CMS
-const currentView = ref<'catalog' | 'admin'>('catalog');
+const currentView = ref<'catalog' | 'about' | 'admin'>('catalog');
 const currentUser = ref<AuthUser | null>(null);
 const isLoginModalOpen = ref(false);
 
@@ -56,6 +57,8 @@ async function checkUrlHash() {
     } else {
       isLoginModalOpen.value = true;
     }
+  } else if (window.location.hash === '#quienes-somos') {
+    currentView.value = 'about';
   } else {
     currentView.value = 'catalog';
   }
@@ -67,6 +70,28 @@ onMounted(async () => {
 
   window.addEventListener('hashchange', checkUrlHash);
 });
+
+function goToAbout() {
+  currentView.value = 'about';
+  window.location.hash = '#quienes-somos';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function goToCatalog() {
+  currentView.value = 'catalog';
+  if (window.location.hash === '#quienes-somos') {
+    history.replaceState(null, '', window.location.pathname);
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function handleToggleAbout() {
+  if (currentView.value === 'about') {
+    goToCatalog();
+  } else {
+    goToAbout();
+  }
+}
 
 function handleOpenAdmin() {
   if (currentUser.value) {
@@ -100,6 +125,9 @@ const activeFilterList = computed(() => {
 });
 
 const currentBanner = computed<BannerInfo>(() => {
+  if (currentView.value === 'about') {
+    return QUIENES_SOMOS_BANNER;
+  }
   if (discoveryMode.value === 'product') {
     return CATEGORY_BANNERS[selectedFilter.value] || CATEGORY_BANNERS.Todos;
   }
@@ -117,6 +145,18 @@ function getBrandCount(brand: string): number {
 
 watch(discoveryMode, () => {
   selectedFilter.value = 'Todos';
+});
+
+watch(searchQuery, (newVal) => {
+  if (newVal.trim() !== '' && currentView.value === 'about') {
+    goToCatalog();
+  }
+});
+
+watch(selectedBrand, (newBrand) => {
+  if (newBrand && currentView.value === 'about') {
+    goToCatalog();
+  }
 });
 
 const filteredProducts = computed(() => {
@@ -173,53 +213,65 @@ function resetAll() {
     @logout="handleLogout"
   />
 
-  <!-- VISTA CATÁLOGO VITRINA PÚBLICA (100% DISEÑO ORIGINAL) -->
+  <!-- VISTA CATÁLOGO / QUIÉNES SOMOS VITRINA PÚBLICA -->
   <div v-else class="min-h-screen flex flex-col">
     <Navbar
       v-model:search-query="searchQuery"
+      :active-view="currentView === 'about' ? 'about' : 'catalog'"
       @open-brands="isBrandDrawerOpen = true"
+      @toggle-about="handleToggleAbout"
+      @navigate="(v) => v === 'about' ? goToAbout() : goToCatalog()"
     />
 
     <main class="flex-1">
       <HeroBanner :banner="currentBanner" />
 
-      <FilterSection
-        v-model:discovery-mode="discoveryMode"
-        v-model:selected-filter="selectedFilter"
-        :filter-list="activeFilterList"
+      <!-- VISTA QUIÉNES SOMOS -->
+      <AboutSection
+        v-if="currentView === 'about'"
+        @go-to-catalog="goToCatalog"
       />
 
-      <section class="catalog-section">
-        <div class="section-heading">
-          <div>
-            <span class="section-kicker">
-              {{ selectedBrand ? `Marca: ${selectedBrand}` : 'Selección Akami' }}
-            </span>
-            <h2>
-              {{ selectedFilter === 'Todos' ? (selectedBrand || 'Esenciales coreanos') : selectedFilter }}
-            </h2>
+      <!-- VISTA CATÁLOGO (FILTROS + PRODUCTOS + CONSULTA) -->
+      <template v-else>
+        <FilterSection
+          v-model:discovery-mode="discoveryMode"
+          v-model:selected-filter="selectedFilter"
+          :filter-list="activeFilterList"
+        />
+
+        <section class="catalog-section">
+          <div class="section-heading">
+            <div>
+              <span class="section-kicker">
+                {{ selectedBrand ? `Marca: ${selectedBrand}` : 'Selección Akami' }}
+              </span>
+              <h2>
+                {{ selectedFilter === 'Todos' ? (selectedBrand || 'Esenciales coreanos') : selectedFilter }}
+              </h2>
+            </div>
+            <span class="count">{{ filteredProducts.length }} productos</span>
           </div>
-          <span class="count">{{ filteredProducts.length }} productos</span>
-        </div>
 
-        <div v-if="filteredProducts.length" class="product-grid">
-          <ProductCard
-            v-for="product in filteredProducts"
-            :key="product.id"
-            :product="product"
-            @select="selectedProduct = product"
-          />
-        </div>
+          <div v-if="filteredProducts.length" class="product-grid">
+            <ProductCard
+              v-for="product in filteredProducts"
+              :key="product.id"
+              :product="product"
+              @select="selectedProduct = product"
+            />
+          </div>
 
-        <div v-else class="empty-state">
-          <Sparkles :size="28" />
-          <h3>No encontramos coincidencias</h3>
-          <p>Prueba con otra marca, categoría o ingrediente.</p>
-          <button @click="resetAll" class="reset-button">Ver todos los productos</button>
-        </div>
-      </section>
+          <div v-else class="empty-state">
+            <Sparkles :size="28" />
+            <h3>No encontramos coincidencias</h3>
+            <p>Prueba con otra marca, categoría o ingrediente.</p>
+            <button @click="resetAll" class="reset-button">Ver todos los productos</button>
+          </div>
+        </section>
 
-      <ConsultationBanner />
+        <ConsultationBanner />
+      </template>
     </main>
 
     <Footer @open-admin="handleOpenAdmin" />
