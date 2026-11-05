@@ -4,14 +4,15 @@ import logoPrimary from '../assets/brand/logo-primary.png';
 
 defineProps<{
   searchQuery: string;
-  activeView?: 'catalog' | 'about';
+  activeView?: 'catalog' | 'about' | 'contact';
 }>();
 
 const emit = defineEmits<{
   (e: 'update:searchQuery', val: string): void;
   (e: 'openBrands'): void;
-  (e: 'navigate', view: 'catalog' | 'about'): void;
+  (e: 'navigate', view: 'catalog' | 'about' | 'contact'): void;
   (e: 'toggleAbout'): void;
+  (e: 'toggleContact'): void;
 }>();
 
 function onInput(e: Event) {
@@ -53,10 +54,19 @@ function onInput(e: Event) {
       <button
         class="nav-about-button"
         :class="{ 'nav-about-button--active': activeView === 'about' }"
-        @click="emit('toggleAbout')"
+        @click="emit('navigate', activeView === 'about' ? 'catalog' : 'about')"
         aria-label="Ir a sección Quiénes somos"
       >
         <span>Quiénes somos</span>
+      </button>
+
+      <button
+        class="nav-about-button nav-contact-button"
+        :class="{ 'nav-about-button--active': activeView === 'contact' }"
+        @click="emit('navigate', activeView === 'contact' ? 'catalog' : 'contact')"
+        aria-label="Ir a sección Contacto"
+      >
+        <span>Contacto</span>
       </button>
 
       <button

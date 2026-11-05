@@ -3,13 +3,14 @@ import { ref, computed, watch, onMounted } from 'vue';
 import { Sparkles } from 'lucide-vue-next';
 
 import { PRODUCTS, CATEGORIES, SKIN_TYPES } from './data/products';
-import { CATEGORY_BANNERS, SKIN_BANNERS, QUIENES_SOMOS_BANNER } from './data/banners';
+import { CATEGORY_BANNERS, SKIN_BANNERS, QUIENES_SOMOS_BANNER, CONTACTO_BANNER } from './data/banners';
 import type { Product, BannerInfo } from './types';
 import { api, type AuthUser } from './services/api';
 
 import Navbar from './components/Navbar.vue';
 import HeroBanner from './components/HeroBanner.vue';
 import AboutSection from './components/AboutSection.vue';
+import ContactSection from './components/ContactSection.vue';
 import FilterSection from './components/FilterSection.vue';
 import ProductCard from './components/ProductCard.vue';
 import ProductDetailModal from './components/ProductDetailModal.vue';
@@ -23,7 +24,7 @@ import AdminLayout from './components/admin/AdminLayout.vue';
 import AdminLoginModal from './components/admin/AdminLoginModal.vue';
 
 // Estado de Navegación y CMS
-const currentView = ref<'catalog' | 'about' | 'admin'>('catalog');
+const currentView = ref<'catalog' | 'about' | 'contact' | 'admin'>('catalog');
 const currentUser = ref<AuthUser | null>(null);
 const isLoginModalOpen = ref(false);
 
@@ -59,6 +60,8 @@ async function checkUrlHash() {
     }
   } else if (window.location.hash === '#quienes-somos') {
     currentView.value = 'about';
+  } else if (window.location.hash === '#contacto') {
+    currentView.value = 'contact';
   } else {
     currentView.value = 'catalog';
   }
@@ -77,20 +80,18 @@ function goToAbout() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function goToCatalog() {
-  currentView.value = 'catalog';
-  if (window.location.hash === '#quienes-somos') {
-    history.replaceState(null, '', window.location.pathname);
-  }
+function goToContact() {
+  currentView.value = 'contact';
+  window.location.hash = '#contacto';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function handleToggleAbout() {
-  if (currentView.value === 'about') {
-    goToCatalog();
-  } else {
-    goToAbout();
+function goToCatalog() {
+  currentView.value = 'catalog';
+  if (window.location.hash === '#quienes-somos' || window.location.hash === '#contacto') {
+    history.replaceState(null, '', window.location.pathname);
   }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function handleOpenAdmin() {
@@ -128,6 +129,9 @@ const currentBanner = computed<BannerInfo>(() => {
   if (currentView.value === 'about') {
     return QUIENES_SOMOS_BANNER;
   }
+  if (currentView.value === 'contact') {
+    return CONTACTO_BANNER;
+  }
   if (discoveryMode.value === 'product') {
     return CATEGORY_BANNERS[selectedFilter.value] || CATEGORY_BANNERS.Todos;
   }
@@ -148,13 +152,13 @@ watch(discoveryMode, () => {
 });
 
 watch(searchQuery, (newVal) => {
-  if (newVal.trim() !== '' && currentView.value === 'about') {
+  if (newVal.trim() !== '' && (currentView.value === 'about' || currentView.value === 'contact')) {
     goToCatalog();
   }
 });
 
 watch(selectedBrand, (newBrand) => {
-  if (newBrand && currentView.value === 'about') {
+  if (newBrand && (currentView.value === 'about' || currentView.value === 'contact')) {
     goToCatalog();
   }
 });
@@ -213,14 +217,17 @@ function resetAll() {
     @logout="handleLogout"
   />
 
-  <!-- VISTA CATÁLOGO / QUIÉNES SOMOS VITRINA PÚBLICA -->
+  <!-- VISTA CATÁLOGO / QUIÉNES SOMOS / CONTACTO VITRINA PÚBLICA -->
   <div v-else class="min-h-screen flex flex-col">
     <Navbar
       v-model:search-query="searchQuery"
-      :active-view="currentView === 'about' ? 'about' : 'catalog'"
+      :active-view="currentView === 'about' ? 'about' : currentView === 'contact' ? 'contact' : 'catalog'"
       @open-brands="isBrandDrawerOpen = true"
-      @toggle-about="handleToggleAbout"
-      @navigate="(v) => v === 'about' ? goToAbout() : goToCatalog()"
+      @navigate="(v) => {
+        if (v === 'about') goToAbout();
+        else if (v === 'contact') goToContact();
+        else goToCatalog();
+      }"
     />
 
     <main class="flex-1">
@@ -229,6 +236,12 @@ function resetAll() {
       <!-- VISTA QUIÉNES SOMOS -->
       <AboutSection
         v-if="currentView === 'about'"
+        @go-to-catalog="goToCatalog"
+      />
+
+      <!-- VISTA CONTACTO -->
+      <ContactSection
+        v-else-if="currentView === 'contact'"
         @go-to-catalog="goToCatalog"
       />
 

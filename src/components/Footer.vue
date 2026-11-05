@@ -13,6 +13,13 @@ const emit = defineEmits<{
     <div class="footer-copy">
       <span class="footer-brand">Akami K-Beauty</span>
       <p>© 2026 Akami C.A. Cosmética Coreana Original en Venezuela.</p>
+      <div class="footer-links">
+        <a href="#catalogo">Catálogo</a>
+        <span>•</span>
+        <a href="#quienes-somos">Quiénes somos</a>
+        <span>•</span>
+        <a href="#contacto">Contacto</a>
+      </div>
     </div>
     <div class="footer-actions">
       <a

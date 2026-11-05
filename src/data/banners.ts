@@ -18,6 +18,14 @@ export const VALOR_MARCA_BANNER: BannerInfo = {
   mobile: `./images/banners/valor-marca-mobile.webp${V}`,
 };
 
+export const CONTACTO_BANNER: BannerInfo = {
+  kicker: '',
+  title: 'Contáctanos',
+  subtitle: 'Estamos aquí para acompañar y guiar tu ritual de belleza consciente.',
+  desktop: `./images/banners/contacto-desktop.webp${V}`,
+  mobile: `./images/banners/contacto-mobile.webp${V}`,
+};
+
 export const CATEGORY_BANNERS: Record<string, BannerInfo> = {
   Todos: {
     kicker: '',
