@@ -225,12 +225,41 @@ async function executeDelete() {
   }
 }
 
-function resolveImageUrl(img: string): string {
-  if (!img) return '';
-  if (img.startsWith('http://') || img.startsWith('https://')) return img;
-  if (img.startsWith('/uploads/')) return img;
-  if (img.startsWith('./')) return img;
-  return `/uploads/products/${img}`;
+function resolveImageUrl(img?: string): string {
+  if (!img || typeof img !== 'string' || img.trim() === '') {
+    return '';
+  }
+  const clean = img.trim();
+  if (clean.startsWith('http://') || clean.startsWith('https://')) return clean;
+  if (clean.startsWith('/uploads/')) return clean;
+  if (clean.startsWith('uploads/')) return `/${clean}`;
+  if (clean.startsWith('./images/')) return clean.replace(/^\.\//, '/');
+  if (clean.startsWith('/images/')) return clean;
+  if (clean.startsWith('images/')) return `/${clean}`;
+  return `/uploads/products/${clean}`;
+}
+
+function handleImgError(e: Event) {
+  const imgEl = e.target as HTMLImageElement;
+  if (!imgEl) return;
+
+  if (imgEl.src.includes('/uploads/products/')) {
+    const filename = imgEl.src.split('/uploads/products/').pop();
+    if (filename && !imgEl.dataset.fallbackTried) {
+      imgEl.dataset.fallbackTried = '1';
+      imgEl.src = `/images/products/${filename}`;
+      return;
+    }
+  }
+
+  if (imgEl.src.includes('/images/products/')) {
+    const filename = imgEl.src.split('/images/products/').pop();
+    if (filename && !imgEl.dataset.fallbackTried) {
+      imgEl.dataset.fallbackTried = '1';
+      imgEl.src = `/uploads/products/${filename}`;
+      return;
+    }
+  }
 }
 
 function showFlash(msg: string) {
@@ -365,11 +394,12 @@ function showFlash(msg: string) {
               <td class="py-3 px-4">
                 <div class="w-12 h-12 rounded-lg bg-ivory border border-blush/60 overflow-hidden flex items-center justify-center shrink-0">
                   <img
-                    v-if="product.image"
+                    v-if="resolveImageUrl(product.image)"
                     :src="resolveImageUrl(product.image)"
                     :alt="product.title"
                     class="w-full h-full object-cover"
                     loading="lazy"
+                    @error="handleImgError"
                   />
                   <ImageIcon v-else :size="18" class="text-ink-light/50" />
                 </div>

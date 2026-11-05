@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 import type { Product } from '../types';
 import { generateWhatsAppLink } from '../data/products';
 import WhatsAppIcon from './icons/WhatsAppIcon.vue';
@@ -12,14 +11,53 @@ const emit = defineEmits<{
   (e: 'select', product: Product): void;
 }>();
 
-const imgError = ref(false);
-
 function resolveImageUrl(img?: string): string {
-  if (!img) return '';
-  if (img.startsWith('http://') || img.startsWith('https://')) return img;
-  if (img.startsWith('/uploads/')) return img;
-  if (img.startsWith('./')) return img;
-  return `/uploads/products/${img}`;
+  if (!img || typeof img !== 'string' || img.trim() === '') {
+    return '';
+  }
+  const clean = img.trim();
+  if (clean.startsWith('http://') || clean.startsWith('https://')) return clean;
+  if (clean.startsWith('/uploads/')) return clean;
+  if (clean.startsWith('uploads/')) return `/${clean}`;
+  if (clean.startsWith('./images/')) return clean.replace(/^\.\//, '/');
+  if (clean.startsWith('/images/')) return clean;
+  if (clean.startsWith('images/')) return `/${clean}`;
+  return `/uploads/products/${clean}`;
+}
+
+function handleImgError(e: Event) {
+  const imgEl = e.target as HTMLImageElement;
+  if (!imgEl) return;
+
+  // Fallback 1: Si falló en /uploads/products/, intentar en /images/products/
+  if (imgEl.src.includes('/uploads/products/')) {
+    const filename = imgEl.src.split('/uploads/products/').pop();
+    if (filename && !imgEl.dataset.fallbackTried) {
+      imgEl.dataset.fallbackTried = '1';
+      imgEl.src = `/images/products/${filename}`;
+      return;
+    }
+  }
+
+  // Fallback 2: Si falló en /images/products/, intentar en /uploads/products/
+  if (imgEl.src.includes('/images/products/')) {
+    const filename = imgEl.src.split('/images/products/').pop();
+    if (filename && !imgEl.dataset.fallbackTried) {
+      imgEl.dataset.fallbackTried = '1';
+      imgEl.src = `/uploads/products/${filename}`;
+      return;
+    }
+  }
+
+  // Si falló completamente la carga, ocultar la etiqueta <img> y mostrar el contenedor vacío
+  imgEl.style.display = 'none';
+  const parent = imgEl.parentElement;
+  if (parent && !parent.querySelector('.product-visual-empty')) {
+    const fallbackBox = document.createElement('div');
+    fallbackBox.className = 'product-visual-empty';
+    fallbackBox.innerHTML = `<span class="empty-brand-tag">${imgEl.alt?.split(' ')[0] || 'AKAMI'}</span>`;
+    parent.appendChild(fallbackBox);
+  }
 }
 </script>
 
@@ -31,11 +69,11 @@ function resolveImageUrl(img?: string): string {
       :aria-label="`Ver ${product.title}`"
     >
       <img
-        v-if="product.image && !imgError"
+        v-if="resolveImageUrl(product.image)"
         :src="resolveImageUrl(product.image)"
         :alt="`${product.title} de ${product.brand}`"
         loading="lazy"
-        @error="imgError = true"
+        @error="handleImgError"
       />
       <div v-else class="product-visual-empty">
         <span class="empty-brand-tag">{{ product.brand }}</span>
@@ -52,18 +90,22 @@ function resolveImageUrl(img?: string): string {
         {{ product.title }}
       </button>
 
-      <div class="product-bottom">
-        <p class="product-price">${{ product.price.toFixed(2) }}</p>
+      <span v-if="product.compatibility" class="skin-badge">{{ product.compatibility }}</span>
+
+      <div class="product-meta">
+        <div class="price">
+          ${{ product.price.toFixed(2) }} <span>USD</span>
+        </div>
         <a
           :href="generateWhatsAppLink(product)"
           target="_blank"
           rel="noopener noreferrer"
-          class="whatsapp-button"
-          :aria-label="`Consultar ${product.title} por WhatsApp`"
-          title="Consultar disponibilidad por WhatsApp"
+          class="card-cta"
+          :title="`Comprar ${product.title} por WhatsApp`"
+          :aria-label="`Comprar ${product.title} por WhatsApp`"
         >
-          <WhatsAppIcon :size="15" />
-          <span>Consultar</span>
+          <WhatsAppIcon :size="13" />
+          <span>Comprar</span>
         </a>
       </div>
     </div>

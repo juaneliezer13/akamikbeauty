@@ -695,7 +695,8 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #ebd9d4;
 }
 
-.product-meta {
+.product-meta,
+.product-bottom {
   justify-content: space-between;
   align-items: center;
   margin-top: auto;
@@ -703,20 +704,24 @@ h1, h2, h3, h4, h5, h6 {
   gap: 8px;
 }
 
-.price {
+.price,
+.product-price {
   font-size: 13px;
   font-weight: 700;
   color: var(--ink);
+  margin: 0;
 }
 
-.price span {
+.price span,
+.product-price span {
   color: var(--muted);
   font-size: 8px;
   font-weight: 500;
   margin-left: 2px;
 }
 
-.card-cta {
+.card-cta,
+.whatsapp-button {
   color: #fff;
   background: #25d366;
   border-radius: 100px;
@@ -733,7 +738,8 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 2px 8px rgba(37, 211, 102, 0.28);
 }
 
-.card-cta:hover {
+.card-cta:hover,
+.whatsapp-button:hover {
   background: #20bd5a;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(37, 211, 102, 0.38);

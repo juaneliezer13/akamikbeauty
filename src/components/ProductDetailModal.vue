@@ -26,11 +26,40 @@ function toggleAccordion(section: 'benefits' | 'ingredients' | 'use') {
 }
 
 function resolveImageUrl(img?: string): string {
-  if (!img) return '';
-  if (img.startsWith('http://') || img.startsWith('https://')) return img;
-  if (img.startsWith('/uploads/')) return img;
-  if (img.startsWith('./')) return img;
-  return `/uploads/products/${img}`;
+  if (!img || typeof img !== 'string' || img.trim() === '') {
+    return '';
+  }
+  const clean = img.trim();
+  if (clean.startsWith('http://') || clean.startsWith('https://')) return clean;
+  if (clean.startsWith('/uploads/')) return clean;
+  if (clean.startsWith('uploads/')) return `/${clean}`;
+  if (clean.startsWith('./images/')) return clean.replace(/^\.\//, '/');
+  if (clean.startsWith('/images/')) return clean;
+  if (clean.startsWith('images/')) return `/${clean}`;
+  return `/uploads/products/${clean}`;
+}
+
+function handleImgError(e: Event) {
+  const imgEl = e.target as HTMLImageElement;
+  if (!imgEl) return;
+
+  if (imgEl.src.includes('/uploads/products/')) {
+    const filename = imgEl.src.split('/uploads/products/').pop();
+    if (filename && !imgEl.dataset.fallbackTried) {
+      imgEl.dataset.fallbackTried = '1';
+      imgEl.src = `/images/products/${filename}`;
+      return;
+    }
+  }
+
+  if (imgEl.src.includes('/images/products/')) {
+    const filename = imgEl.src.split('/images/products/').pop();
+    if (filename && !imgEl.dataset.fallbackTried) {
+      imgEl.dataset.fallbackTried = '1';
+      imgEl.src = `/uploads/products/${filename}`;
+      return;
+    }
+  }
 }
 </script>
 
@@ -54,9 +83,10 @@ function resolveImageUrl(img?: string): string {
       <div class="sheet-scroll">
         <div class="gallery">
           <img
-            v-if="product.image"
+            v-if="resolveImageUrl(product.gallery?.[galleryIndex] || product.image)"
             :src="resolveImageUrl(product.gallery?.[galleryIndex] || product.image)"
             :alt="product.title"
+            @error="handleImgError"
           />
           <div v-else class="gallery-empty">
             <span class="empty-brand-tag">{{ product.brand }}</span>
