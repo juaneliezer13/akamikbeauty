@@ -32,6 +32,19 @@ function getAuthHeader(): Record<string, string> {
   return token ? { Authorization: `Bearer ${token}` } : {};
 }
 
+async function parseJsonResponse(res: Response, fallbackError: string) {
+  let json: any = null;
+  try {
+    json = await res.json();
+  } catch {
+    throw new Error(`Error en el servidor (${res.status} ${res.statusText || 'Respuesta no válida'})`);
+  }
+  if (!res.ok || !json.success) {
+    throw new Error(json.error || fallbackError);
+  }
+  return json;
+}
+
 export const api = {
   // -------------------------------------------------------------
   // AUTENTICACIÓN
@@ -42,10 +55,7 @@ export const api = {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password })
     });
-    const json = await res.json();
-    if (!res.ok || !json.success) {
-      throw new Error(json.error || 'Credenciales incorrectas');
-    }
+    const json = await parseJsonResponse(res, 'Credenciales incorrectas');
     localStorage.setItem('akami_token', json.data.token);
     return json.data;
   },
@@ -74,13 +84,10 @@ export const api = {
       const res = await fetch(`${API_BASE}/auth/me`, {
         headers: getAuthHeader()
       });
-      const json = await res.json();
-      if (res.ok && json.success) {
-        return json.data;
-      }
-      localStorage.removeItem('akami_token');
-      return null;
+      const json = await parseJsonResponse(res, 'Sesión no válida');
+      return json.data;
     } catch {
+      localStorage.removeItem('akami_token');
       return null;
     }
   },
@@ -95,10 +102,7 @@ export const api = {
     if (params?.search) query.set('search', params.search);
 
     const res = await fetch(`${API_BASE}/products?${query.toString()}`);
-    const json = await res.json();
-    if (!res.ok || !json.success) {
-      throw new Error(json.error || 'Error al obtener productos');
-    }
+    const json = await parseJsonResponse(res, 'Error al obtener productos');
     return json.data;
   },
 
@@ -112,10 +116,7 @@ export const api = {
     const res = await fetch(`${API_BASE}/admin/products?${query.toString()}`, {
       headers: getAuthHeader()
     });
-    const json = await res.json();
-    if (!res.ok || !json.success) {
-      throw new Error(json.error || 'Error al obtener productos para administración');
-    }
+    const json = await parseJsonResponse(res, 'Error al obtener productos para administración');
     return json.data;
   },
 
@@ -143,10 +144,7 @@ export const api = {
       headers: getAuthHeader(),
       body: formData
     });
-    const json = await res.json();
-    if (!res.ok || !json.success) {
-      throw new Error(json.error || 'Error al crear producto');
-    }
+    const json = await parseJsonResponse(res, 'Error al crear producto');
     return json.data;
   },
 
@@ -167,14 +165,11 @@ export const api = {
     }
 
     const res = await fetch(`${API_BASE}/admin/products/${id}`, {
-      method: 'POST', // Usamos POST con method-override o directo en PHP
+      method: 'POST',
       headers: getAuthHeader(),
       body: formData
     });
-    const json = await res.json();
-    if (!res.ok || !json.success) {
-      throw new Error(json.error || 'Error al actualizar producto');
-    }
+    const json = await parseJsonResponse(res, 'Error al actualizar producto');
     return json.data;
   },
 
@@ -187,21 +182,19 @@ export const api = {
       },
       body: JSON.stringify({ is_active: isActive ? 1 : 0 })
     });
-    const json = await res.json();
-    if (!res.ok || !json.success) {
-      throw new Error(json.error || 'Error al cambiar estado del producto');
-    }
+    await parseJsonResponse(res, 'Error al cambiar estado del producto');
   },
 
   async deleteProduct(id: number): Promise<void> {
-    const res = await fetch(`${API_BASE}/admin/products/${id}`, {
-      method: 'DELETE',
-      headers: getAuthHeader()
+    const res = await fetch(`${API_BASE}/admin/products/${id}/delete`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-HTTP-Method-Override': 'DELETE',
+        ...getAuthHeader()
+      }
     });
-    const json = await res.json();
-    if (!res.ok || !json.success) {
-      throw new Error(json.error || 'Error al eliminar producto');
-    }
+    await parseJsonResponse(res, 'Error al eliminar producto');
   },
 
   // -------------------------------------------------------------
@@ -209,10 +202,7 @@ export const api = {
   // -------------------------------------------------------------
   async getBrands(): Promise<BrandItem[]> {
     const res = await fetch(`${API_BASE}/brands`);
-    const json = await res.json();
-    if (!res.ok || !json.success) {
-      throw new Error(json.error || 'Error al obtener marcas');
-    }
+    const json = await parseJsonResponse(res, 'Error al obtener marcas');
     return json.data;
   },
 
@@ -225,37 +215,33 @@ export const api = {
       },
       body: JSON.stringify({ name })
     });
-    const json = await res.json();
-    if (!res.ok || !json.success) {
-      throw new Error(json.error || 'Error al crear marca');
-    }
+    const json = await parseJsonResponse(res, 'Error al crear marca');
     return json.data;
   },
 
   async updateBrand(id: number, name: string): Promise<void> {
     const res = await fetch(`${API_BASE}/admin/brands/${id}`, {
-      method: 'PUT',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'X-HTTP-Method-Override': 'PUT',
         ...getAuthHeader()
       },
       body: JSON.stringify({ name })
     });
-    const json = await res.json();
-    if (!res.ok || !json.success) {
-      throw new Error(json.error || 'Error al actualizar marca');
-    }
+    await parseJsonResponse(res, 'Error al actualizar marca');
   },
 
   async deleteBrand(id: number): Promise<void> {
-    const res = await fetch(`${API_BASE}/admin/brands/${id}`, {
-      method: 'DELETE',
-      headers: getAuthHeader()
+    const res = await fetch(`${API_BASE}/admin/brands/${id}/delete`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-HTTP-Method-Override': 'DELETE',
+        ...getAuthHeader()
+      }
     });
-    const json = await res.json();
-    if (!res.ok || !json.success) {
-      throw new Error(json.error || 'Error al eliminar marca');
-    }
+    await parseJsonResponse(res, 'Error al eliminar marca');
   },
 
   // -------------------------------------------------------------
@@ -263,10 +249,7 @@ export const api = {
   // -------------------------------------------------------------
   async getCategories(): Promise<CategoryItem[]> {
     const res = await fetch(`${API_BASE}/categories`);
-    const json = await res.json();
-    if (!res.ok || !json.success) {
-      throw new Error(json.error || 'Error al obtener categorías');
-    }
+    const json = await parseJsonResponse(res, 'Error al obtener categorías');
     return json.data;
   },
 
@@ -279,36 +262,32 @@ export const api = {
       },
       body: JSON.stringify({ name })
     });
-    const json = await res.json();
-    if (!res.ok || !json.success) {
-      throw new Error(json.error || 'Error al crear categoría');
-    }
+    const json = await parseJsonResponse(res, 'Error al crear categoría');
     return json.data;
   },
 
   async updateCategory(id: number, name: string): Promise<void> {
     const res = await fetch(`${API_BASE}/admin/categories/${id}`, {
-      method: 'PUT',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'X-HTTP-Method-Override': 'PUT',
         ...getAuthHeader()
       },
       body: JSON.stringify({ name })
     });
-    const json = await res.json();
-    if (!res.ok || !json.success) {
-      throw new Error(json.error || 'Error al actualizar categoría');
-    }
+    await parseJsonResponse(res, 'Error al actualizar categoría');
   },
 
   async deleteCategory(id: number): Promise<void> {
-    const res = await fetch(`${API_BASE}/admin/categories/${id}`, {
-      method: 'DELETE',
-      headers: getAuthHeader()
+    const res = await fetch(`${API_BASE}/admin/categories/${id}/delete`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-HTTP-Method-Override': 'DELETE',
+        ...getAuthHeader()
+      }
     });
-    const json = await res.json();
-    if (!res.ok || !json.success) {
-      throw new Error(json.error || 'Error al eliminar categoría');
-    }
+    await parseJsonResponse(res, 'Error al eliminar categoría');
   }
 };
