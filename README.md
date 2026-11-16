@@ -45,11 +45,10 @@ Acceder a: `http://localhost/akami/` o `http://localhost/`
 
 ```bash
 # Construir la imagen
-docker build -t juaneliezer13/akamikbeauty:latest -t juaneliezer13/akamikbeauty:1.0.0 .
+docker build -t juaneliezer13/akamikbeauty:latest .
 
 # Subir a Docker Hub
 docker push juaneliezer13/akamikbeauty:latest
-docker push juaneliezer13/akamikbeauty:1.0.0
 ```
 
 ### 2. En la instancia EC2 de AWS
@@ -63,3 +62,10 @@ docker compose pull
 # Iniciar o reiniciar el contenedor
 docker compose up -d
 ```
+
+---
+
+## 🏷️ Historial de Versiones y Release Notes
+
+Todas las notas de lanzamiento e información de versiones del proyecto están centralizadas en el repositorio de documentación:
+- [`akami-docs/releases/`](../akami-docs/releases/README.md)
