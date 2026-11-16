@@ -22,11 +22,11 @@ export default defineConfig({
     host: true,
     proxy: {
       '/api': {
-        target: 'http://localhost:15001',
+        target: 'http://localhost:16001',
         changeOrigin: true,
       },
       '/uploads': {
-        target: 'http://localhost:16001',
+        target: 'http://localhost:17001',
         changeOrigin: true,
       },
     },

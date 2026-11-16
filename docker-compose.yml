@@ -1,5 +1,5 @@
 # 🐳 Docker Compose — Akami Web (Frontend SPA + Nginx)
-# Expone la aplicación web en el puerto 16001 (configurable via FRONT_PORT)
+# Expone la aplicación web en el puerto 17001 (configurable via FRONT_PORT)
 
 services:
   web_akami:
@@ -10,7 +10,7 @@ services:
     container_name: cliente_akami
     restart: unless-stopped
     ports:
-      - "${FRONT_PORT:-16001}:80"
+      - "${FRONT_PORT:-17001}:80"
     volumes:
       - ./html:/usr/share/nginx/html:ro
       - ${UPLOADS_DIR:-../uploads}:/usr/share/nginx/uploads:ro
